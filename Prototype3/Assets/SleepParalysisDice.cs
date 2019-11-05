@@ -29,6 +29,10 @@ public class SleepParalysisDice : MonoBehaviour
             {
                 diceRoll = 2;
             }
+            if (!DiceManager.CanCurrentlyRollOne())
+            {
+                diceRoll = 2;
+            }
         }
 
         if (TurnManager.GetCurrTurnCharacter().tag.Contains("Player"))
@@ -60,6 +64,7 @@ public class SleepParalysisDice : MonoBehaviour
         int attackTotal = int.Parse(DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text);
         attackTotal += diceRoll;
         DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text = attackTotal.ToString();
+        DiceManager.FindTypeTotalGameObject("AP").GetComponent<TextPulseTypeTotals>().Pulse();
 
         if (diceRoll == 1)
         {

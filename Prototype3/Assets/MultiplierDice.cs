@@ -72,10 +72,14 @@ public class MultiplierDice : MonoBehaviour
             }
         }
 
-        int attackTotal = int.Parse(DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text);
-        attackTotal += rollAdd;
 
+        int attackTotal = int.Parse(DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text);
+
+        attackTotal += rollAdd;
         DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text = attackTotal.ToString();
+
+        DiceManager.FindTypeTotalGameObject("AP").GetComponent<TextPulseTypeTotals>().Pulse();
+
         GameObject.Find("AttackHolder").GetComponent<AttackHolder>().AddAttack(diceRoll, "Multiplier", rollAdd);
     }
 

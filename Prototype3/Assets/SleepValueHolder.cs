@@ -52,7 +52,12 @@ public class SleepValueHolder : MonoBehaviour
         float winnersHealth = 0;
         float losersHealth = 0;
 
-        if (player.GetCurrHP() > 0)
+        if (SurrenderButton.HasSurrendered())
+        {
+            winnersHealth = enemy.GetCurrHP() / enemy.hp;
+            losersHealth = player.GetCurrHP() / player.hp;
+        }
+        else if (player.GetCurrHP() > 0)
         {
             winnersHealth = player.GetCurrHP() / player.hp;
         }
@@ -61,17 +66,24 @@ public class SleepValueHolder : MonoBehaviour
             winnersHealth = enemy.GetCurrHP() / enemy.hp;
         }
 
-        _amountChanged = Mathf.Abs(winnersHealth) + Mathf.Abs(losersHealth);
-        _amountChanged = _amountChanged * 0.2f;
-
-        //Change the output string.
-        if (player.GetCurrHP() > 0)
+        if (SurrenderButton.HasSurrendered())
         {
-            _fightOutcomeString = "Your sleep quality has improved!\nAyanda is feeling REPLACETHIS";
+            _amountChanged = Mathf.Abs(winnersHealth)/Mathf.Abs(losersHealth);
         }
         else
         {
+            _amountChanged = Mathf.Abs(winnersHealth) + Mathf.Abs(losersHealth);
+        }
+
+        _amountChanged = _amountChanged * 0.2f;
+
+        //Change the output string.
+        if (SurrenderButton.HasSurrendered() || enemy.GetCurrHP() > 0)
+        {
             _fightOutcomeString = "Your sleep quality has declined.\nAyanda is feeling REPLACETHIS";
+        }else if (player.GetCurrHP() > 0)
+        {
+            _fightOutcomeString = "Your sleep quality has improved!\nAyanda is feeling REPLACETHIS";
         }
     }
 

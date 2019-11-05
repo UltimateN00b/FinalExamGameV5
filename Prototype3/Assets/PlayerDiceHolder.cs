@@ -7,8 +7,8 @@ public class PlayerDiceHolder : MonoBehaviour
 {
 
     private static string dice1 = "Common";
-    private static string dice2 = "Empty";
-    private static string dice3 = "Empty";
+    private static string dice2 = "Poison";
+    private static string dice3 = "LifeSteal";
 
     // Start is called before the first frame update
     void Start()

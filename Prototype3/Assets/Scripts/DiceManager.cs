@@ -31,6 +31,7 @@ public class DiceManager : MonoBehaviour
 
     private static int _numPlayerRolls;
 
+    private static bool _canCurrentlyRollOne;
 
     // Start is called before the first frame update
     void Start()
@@ -365,5 +366,15 @@ public class DiceManager : MonoBehaviour
     public static int GetNumPlayerRolls()
     {
         return _numPlayerRolls;
+    }
+
+    public static void SetCanCurrentlyRollOne(bool canRoll)
+    {
+        _canCurrentlyRollOne = canRoll;
+    }
+
+    public static bool CanCurrentlyRollOne()
+    {
+        return _canCurrentlyRollOne;
     }
 }

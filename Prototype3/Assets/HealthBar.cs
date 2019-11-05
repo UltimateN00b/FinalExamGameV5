@@ -30,9 +30,12 @@ public class HealthBar : MonoBehaviour
     {
         if (this.transform.parent.transform.parent.gameObject.tag.Contains("Enemy"))
         {
-            if (TurnManager.GetCurrTurnCharacter().GetComponent<Character>().GetCurrHP() <= 0)
+            if (TurnManager.GetCurrTurnCharacter().GetComponent<Character>().GetCurrHP() <= 0 || SurrenderButton.HasSurrendered())
             {
+                GameObject.Find("Surrender").GetComponent<CustomButton>().Disable();
+
                 _death = true;
+
                 if (TurnManager.GetCurrTurnCharacter().tag.Contains("Enemy"))
                 {
                     TurnManager.GetCurrTurnCharacter().GetComponent<EnemyAI>().CeaseEnemyAI();

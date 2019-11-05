@@ -29,9 +29,28 @@ public class Dice : MonoBehaviour
 
     private bool _beenClicked;
 
+    private bool _canRollOne;
+
     private void Awake()
     {
         _paralysed = false;
+
+        if (!TutorialManager.IsTutorial())
+        {
+            _canRollOne = false;
+
+            if (NextDaySceneStarter.GetDayNum() <= 2)
+            {
+                if (this.gameObject.name.Contains("1") || this.gameObject.name.Contains("2"))
+                {
+                    _canRollOne = true;
+                }
+            }
+            else
+            {
+                _canRollOne = true;
+            }
+        }
     }
 
     // Start is called before the first frame update
@@ -136,6 +155,8 @@ public class Dice : MonoBehaviour
             if (!DiceManager.GetCurrCharacter().tag.Contains("Enemy"))
             {
                 AudioManager.PlaySound(Resources.Load("Dice roll") as AudioClip);
+
+                DiceManager.SetCanCurrentlyRollOne(_canRollOne);
                 m_OnDiceStopped.Invoke();
             }
 
@@ -191,6 +212,8 @@ public class Dice : MonoBehaviour
                 GameObject.Find(questionMarkName).GetComponent<Image>().enabled = false;
 
                 AudioManager.PlaySound(Resources.Load("Dice roll") as AudioClip);
+
+                DiceManager.SetCanCurrentlyRollOne(_canRollOne);
                 m_OnDiceStopped.Invoke();
 
                 this.GetComponent<Button>().enabled = false;

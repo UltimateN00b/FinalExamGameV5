@@ -86,16 +86,15 @@ public class ConfirmAttackButton : MonoBehaviour
                         //Manage particle effects
                         AudioManager.PlaySound(Resources.Load("Explosions") as AudioClip);
 
-                        GameObject particles = Resources.Load(_attacks[_attackNum].GetMyType()) as GameObject;
-
+                        for (int i = 0; i < _attacks.Count; i++)
+                        {
+                        GameObject particles = Resources.Load(_attacks[i].GetMyType()) as GameObject;
                         Vector3 particlePos = c.transform.position;
                         particlePos.z -= 3;
 
                         Instantiate(particles, particlePos, Quaternion.identity);
+                        }
 
-                        //GameObject effectsAnimator = Utilities.SearchChild("EffectsAnimator", c.gameObject);
-                        //effectsAnimator.GetComponent<SpriteRenderer>().enabled = true;
-                        //effectsAnimator.GetComponent<Animator>().enabled = true;
                     }
                     _hasMovedToAttackPos = true;
 
@@ -111,32 +110,20 @@ public class ConfirmAttackButton : MonoBehaviour
 
 
                     Character currChar = DiceManager.GetCurrCharacter();
-                    DiceManager.ExecuteAttack(_attacks[_attackNum].GetMyAP());
 
-                    //OLD - USE THE CODE BELOW FOR THE COLLECTIVE SYSTEM AND NOT THE COMBO
-                    //for (int i = 0; i < GameObject.Find("DiceCanvas").transform.childCount; i++)
-                    //{
-                    //    GameObject currChild = GameObject.Find("DiceCanvas").transform.GetChild(i).gameObject;
-
-                    //    if (currChild.activeInHierarchy)
-                    //    {
-                    //        currChild.GetComponent<Dice>().InvokeOnAttackEvent();
-                    //    }
-                    //}
-
-                    DiceType myDiceType = DiceManager.SearchDiceType(_attacks[_attackNum].GetMyType());
-                    m_OnCurrAttack = myDiceType.GetOnAttackEvent();
-                    m_OnCurrAttack.Invoke();
+                    for (int i = 0; i < _attacks.Count; i++)
+                    {
+                        DiceManager.ExecuteAttack(_attacks[i].GetMyAP());
+                        DiceType myDiceType = DiceManager.SearchDiceType(_attacks[i].GetMyType());
+                        m_OnCurrAttack = myDiceType.GetOnAttackEvent();
+                        m_OnCurrAttack.Invoke();
+                    }
 
                     _hasPlayedAttackAnim = true;
                 }
             }
             else
             {
-                //***IF the attack num = the length of the attack list, all of the attacks are done. So:
-
-                if (_attackNum >= _attacks.Count - 1)
-                {
                     DiceManager.GetCurrCharacter().gameObject.transform.position = Vector3.MoveTowards(DiceManager.GetCurrCharacter().gameObject.transform.position, _originalPos, step);
 
                     if (Vector3.Distance(DiceManager.GetCurrCharacter().gameObject.transform.position, _originalPos) > 0.1f)
@@ -153,17 +140,6 @@ public class ConfirmAttackButton : MonoBehaviour
                         GameObject.Find("AttackHolder").GetComponent<AttackHolder>().ClearAttacks();
                         TurnManager.FinishAttack();
                     }
-                }
-                else
-                {
-                    _startAttack = true;
-                    _hasMovedToAttackPos = false;
-                    _hasPlayedAttackAnim = false;
-
-                    _attackNum++;
-
-                    ManageAttackAnimations();
-                }
             }
         }
     }
@@ -223,11 +199,13 @@ public class ConfirmAttackButton : MonoBehaviour
             _uiPlayer.SetActive(true);
 
             this.GetComponent<SpriteRenderer>().enabled = true;
+            GameObject.Find("Surrender").GetComponent<SurrenderButton>().Show();
         }
         else
         {
             _uiSkinEnemy.SetActive(true);
             _uiEnemy.SetActive(true);
+            GameObject.Find("Surrender").GetComponent<SurrenderButton>().Hide();
         }
 
         for (int i = 0; i < GameObject.Find("DiceCanvas").transform.childCount; i++)
@@ -242,21 +220,21 @@ public class ConfirmAttackButton : MonoBehaviour
         }
     }
 
-    private string determineAnimationType(DiceType dT)
+    private string determineAnimationType(int aP)
     {
         string returnString = null;
 
-        if (dT.GetName().Contains("Common"))
+        if (aP < 10)
         {
             returnString = "defaultAttack";
         }
-        else if (dT.GetName().Contains("Multiplier"))
+        else if (aP >= 10 & aP < 30)
         {
-            returnString = "multiplierAttack";
+            returnString = "specialAttack";
         }
         else
         {
-            returnString = "specialAttack";
+            returnString = "multiplierAttack";
         }
 
         return returnString;
@@ -274,7 +252,10 @@ public class ConfirmAttackButton : MonoBehaviour
             myAnim.SetBool("attack", true);
 
             DiceType myDiceType = DiceManager.SearchDiceType(_attacks[_attackNum].GetMyType());
-            GameObject.Find("Ayanda").GetComponent<Animator>().SetBool(determineAnimationType(myDiceType), true);
+
+            int aP = int.Parse(DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text);
+
+            GameObject.Find("Ayanda").GetComponent<Animator>().SetBool(determineAnimationType(aP), true);
         }
         else
         {

@@ -20,12 +20,10 @@ public class DiceType : MonoBehaviour
             m_OnStopped = new UnityEvent();
         }
 
-
         if (m_OnAttack == null)
         {
             m_OnAttack = new UnityEvent();
         }
-
 
         if (m_OnStatusEffect == null)
         {
