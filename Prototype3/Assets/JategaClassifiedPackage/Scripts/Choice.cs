@@ -70,7 +70,7 @@ public class Choice : MonoBehaviour {
 
     public void DisableOnSleepMeterLessThan(float meterCheck)
     {
-        if (GameObject.Find("SleepMeter").GetComponent<SleepMeter>().GetSleepValue() < meterCheck)
+        if (SleepValueHolder.GetSleepValue() < meterCheck)
         {
             int childIndex = int.Parse(this.gameObject.name.Substring(this.gameObject.name.Length - 1));
             childIndex -= 1;
@@ -83,7 +83,7 @@ public class Choice : MonoBehaviour {
         int childIndex = int.Parse(this.gameObject.name.Substring(this.gameObject.name.Length - 1));
         childIndex -= 1;
 
-        if (GameObject.Find("SleepMeter").GetComponent<SleepMeter>().GetSleepValue() > meterCheck)
+        if (SleepValueHolder.GetSleepValue() > meterCheck)
         {
             GameObject.Find("ChoiceButton" + childIndex).GetComponent<ChoiceButton>().EnableChoiceWithIcon();
         } else

@@ -155,7 +155,6 @@ public class Chatbot : MonoBehaviour {
 
     private void AdjustAllPositions()
     {
-        print("ADJUST ALL POSITIONS CALLED");
         foreach (GameObject g in GameObject.FindGameObjectsWithTag("ChatObject"))
         {
             if (GameObject.Find(g.name + "_ChatBot") != null)
@@ -164,7 +163,6 @@ public class Chatbot : MonoBehaviour {
 
                 foreach (ChatPosSetter c in currChatBot.GetComponent<Chatbot>().myListChatPosSetters())
                 {
-                    print("ADJUSTING POSITION: " + currChatBot.name + " should move " + c.pos + " because of " + c.person);
                     c.SetPosAccordingToPerson();
                 }
             }

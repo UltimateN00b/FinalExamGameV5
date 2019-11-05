@@ -14,7 +14,6 @@ public class ChatPosSetter : MonoBehaviour
     private void Awake()
     {
         this.gameObject.GetComponent<Chatbot>().AddChatBotPosSetterToList(this);
-        print("SHOULD ADD TO LIST");
     }
 
     private void Update()
@@ -44,17 +43,14 @@ public class ChatPosSetter : MonoBehaviour
                     if (pos.ToUpper() == "LEFT")
                     {
                         _currMovingPos = new Vector3(this.GetComponent<Chatbot>().leftPos, this.transform.position.y, this.transform.position.z);
-                        print("SETTING POS ACCORDING TO PERSON: " + this.name + "should move " + "left");
                     }
                     else if (pos.ToUpper() == "RIGHT")
                     {
                         _currMovingPos = new Vector3(this.GetComponent<Chatbot>().rightPos, this.transform.position.y, this.transform.position.z);
-                        print("SETTING POS ACCORDING TO PERSON: " + this.name + "should move " + "right");
                     }
                     else
                     {
                         _currMovingPos = new Vector3(this.GetComponent<Chatbot>().centerPos, this.transform.position.y, this.transform.position.z);
-                        print("SETTING POS ACCORDING TO PERSON: " + this.name + "should move " + "center");
                     }
                 }
                 else
@@ -63,17 +59,14 @@ public class ChatPosSetter : MonoBehaviour
                     if (pos.ToUpper() == "LEFT")
                     {
                         this.transform.position = new Vector3(this.GetComponent<Chatbot>().leftPos, this.transform.position.y, this.transform.position.z);
-                        print("SETTING POS ACCORDING TO PERSON: " + this.name + "should move " + "left");
                     }
                     else if (pos.ToUpper() == "RIGHT")
                     {
                         this.transform.position = new Vector3(this.GetComponent<Chatbot>().rightPos, this.transform.position.y, this.transform.position.z);
-                        print("SETTING POS ACCORDING TO PERSON: " + this.name + "should move " + "right");
                     }
                     else
                     {
                         this.transform.position = new Vector3(this.GetComponent<Chatbot>().centerPos, this.transform.position.y, this.transform.position.z);
-                        print("SETTING POS ACCORDING TO PERSON: " + this.name + "should move " + "center");
                     }
                 }
             }

@@ -72,8 +72,6 @@ public class SatchelScreen : MonoBehaviour {
         _isVisible = false;
         _currScreen = GetScreenByName("ItemsScreen");
         _isPresentationMode = false;
-
-        Debug.Log("SOMETHING HID THE SATCHEL SCREEN");
     }
 
     public void Show()

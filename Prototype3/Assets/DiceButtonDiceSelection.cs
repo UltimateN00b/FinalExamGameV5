@@ -70,8 +70,6 @@ public class DiceButtonDiceSelection : MonoBehaviour
 
             DiceSkin dS = FindDiceSkin(_myDiceName);
             GameObject.Find("PopupCanvas").GetComponent<PopupCanvasDiceSelection>().Popup(dS.GetDiceInfoTitle(), dS.GetDiceInfoBody());
-
-            Debug.Log("MY DICE NAME: " + _myDiceName);
         } else if (this.gameObject.name.Contains("DefaultDice"))
         {
             GameObject.Find("PopupCanvas").GetComponent<PopupCanvasDiceSelection>().Popup("Default Dice", "Dice for scrubs");

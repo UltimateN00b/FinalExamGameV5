@@ -6,72 +6,85 @@ using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
 {
-    private static GameObject sleepMeter;
     private static bool _death;
+    private float _changeSceneTimer;
+
+    private static bool _hasUpdatedSleepValue;
 
     // Start is called before the first frame update
 
     void Start()
     {
-        sleepMeter = GameObject.Find("SleepMeter");
         _death = false;
-    }
+        _changeSceneTimer = 0.0f;
 
-    private void OnLevelWasLoaded()
+    }
+    private void OnLevelWasLoaded(int level)
     {
         _death = false;
+        _hasUpdatedSleepValue = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (TurnManager.GetCurrTurnCharacter().GetComponent<Character>().GetCurrHP() <= 0)
+        if (this.transform.parent.transform.parent.gameObject.tag.Contains("Enemy"))
         {
-            _death = true;
-            if (TurnManager.GetCurrTurnCharacter().tag.Contains("Enemy"))
+            if (TurnManager.GetCurrTurnCharacter().GetComponent<Character>().GetCurrHP() <= 0)
             {
-                TurnManager.GetCurrTurnCharacter().GetComponent<EnemyAI>().CeaseEnemyAI();
-            } else
-            {
-                DiceManager.DisableAllButtons();
-            }
-
-            if ((int)(TurnManager.GetCurrTurnCharacter().GetComponent<Character>().GetCurrHP()) < 0)
-            {
-                GameObject overkillCanvas = Utilities.SearchChild("OverkillCanvas", TurnManager.GetCurrTurnCharacter());
-                GameObject overkillIndicator = Utilities.SearchChild("OverkillIndicator", overkillCanvas);
-                overkillIndicator.GetComponent<OverkillIndicator>().ShowOverkill((int)(TurnManager.GetCurrTurnCharacter().GetComponent<Character>().GetCurrHP()));
-            }
-
-            if (!TutorialManager.IsTutorial())
-            {
-                sleepMeter.GetComponent<SleepMeter>().UpdateSleepValue();
-
+                _death = true;
                 if (TurnManager.GetCurrTurnCharacter().tag.Contains("Enemy"))
                 {
-                    //SceneManager.LoadScene("YouWin");
-
-                    Invoke("LoadWinScene", 3.0f);
+                    TurnManager.GetCurrTurnCharacter().GetComponent<EnemyAI>().CeaseEnemyAI();
                 }
                 else
                 {
-                    //SceneManager.LoadScene("YouLose");
-                    Invoke("LoadLoseScene", 3.0f);
+                    DiceManager.DisableAllButtons();
                 }
 
-                TutorialManager.MarkTutorialPlayed();
-            } else
-            {
-                GameObject.Find("ShadowEnemy").GetComponent<MyImage>().FadeOut();
-                Destroy(GameObject.Find("TutorialCase"));
-                TutorialManager.SetTutorialOver();
+                if ((int)(TurnManager.GetCurrTurnCharacter().GetComponent<Character>().GetCurrHP()) < 0)
+                {
+                    GameObject overkillCanvas = Utilities.SearchChild("OverkillCanvas", TurnManager.GetCurrTurnCharacter());
+                    GameObject overkillIndicator = Utilities.SearchChild("OverkillIndicator", overkillCanvas);
+                    overkillIndicator.GetComponent<OverkillIndicator>().ShowOverkill((int)(TurnManager.GetCurrTurnCharacter().GetComponent<Character>().GetCurrHP()));
+                }
+
+                if (!TutorialManager.IsTutorial())
+                {
+                    _changeSceneTimer += Time.deltaTime;
+
+                    if (_changeSceneTimer >= 3f)
+                    {
+                        if (!_hasUpdatedSleepValue)
+                        {
+                            if (TurnManager.GetCurrTurnCharacter().tag.Contains("Enemy"))
+                            {
+                                GameObject.Find("SleepValueHolder").GetComponent<SleepValueHolder>().UpdateSleepValue();
+                                SceneManager.LoadScene("YouWin");
+                            }
+                            else
+                            {
+                                GameObject.Find("SleepValueHolder").GetComponent<SleepValueHolder>().UpdateSleepValue();
+                                SceneManager.LoadScene("YouLose");
+                            }
+
+                            Debug.Log("CHANGED SCENES");
+                            _changeSceneTimer = 0.0f;
+                            _hasUpdatedSleepValue = true;
+                        }
+
+                    }
+
+                    TutorialManager.MarkTutorialPlayed();
+                }
+                else
+                {
+                    GameObject.Find("ShadowEnemy").GetComponent<MyImage>().FadeOut();
+                    Destroy(GameObject.Find("TutorialCase"));
+                    TutorialManager.SetTutorialOver();
+                }
             }
         }
-    }
-
-    private void OnLevelWasLoaded(int level)
-    {
-        //_updatedSleepValue = false;
     }
 
     public void ChangeHealth(float healthPoints)
@@ -93,19 +106,13 @@ public class HealthBar : MonoBehaviour
         Utilities.SearchChild("HP", this.transform.parent.gameObject).GetComponent<Text>().text = character.GetComponent<Character>().GetCurrHP() + "/" + character.GetComponent<Character>().hp;
     }
 
-    public static void SetSleepMeter(GameObject sM)
-    {
-        sleepMeter = sM;
-    }
-
     private void LoadWinScene()
     {
-        SceneManager.LoadScene("YouWin");
+
     }
 
     private void LoadLoseScene()
     {
-        SceneManager.LoadScene("YouLose");
     }
 
     public static bool DeathOccurred()

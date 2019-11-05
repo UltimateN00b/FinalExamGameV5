@@ -55,7 +55,6 @@ public class Character : MonoBehaviour
         _paralysed = false;
 
         GameObject healthCanvasChar = Utilities.SearchChild("HealthCanvas", this.gameObject);
-        Debug.Log("CHARACTER: " + this.gameObject.name);
         Utilities.SearchChild("HP", healthCanvasChar).GetComponent<Text>().text = this.GetComponent<Character>().GetCurrHP() + "/" + this.GetComponent<Character>().hp;
     }
 

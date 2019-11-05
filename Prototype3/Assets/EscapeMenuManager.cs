@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EscapeMenuManager : MonoBehaviour
 {
@@ -30,30 +31,30 @@ public class EscapeMenuManager : MonoBehaviour
 
     public void UpdateAyandaSleep()
     {
-        if (GameObject.Find("SleepMeter") != null)
+        if (GameObject.Find("SleepValueHolder") != null)
         {
             UpdateDay();
 
             AyandaFeels ayandaFeels = Utilities.SearchChild("AyandaFeels", this.gameObject).GetComponent<AyandaFeels>();
             AyandaPortrait ayandaPortrait = Utilities.SearchChild("AyandaPortrait", this.gameObject).GetComponent<AyandaPortrait>();
 
-            float sleepMeterValue = GameObject.Find("SleepMeter").GetComponent<Slider>().value;
+            float sleepValue = SleepValueHolder.GetSleepValue();
 
             string sleepString = "";
 
-            if (sleepMeterValue <= 1 && sleepMeterValue >= 0.8f)
+            if (sleepValue <= 1 && sleepValue >= 0.8f)
             {
                 sleepString = "Energised";
             }
-            else if (sleepMeterValue <= 0.79f && sleepMeterValue >= 0.6f)
+            else if (sleepValue <= 0.79f && sleepValue >= 0.6f)
             {
                 sleepString = "Rested";
             }
-            else if (sleepMeterValue <= 0.59f && sleepMeterValue >= 0.4f)
+            else if (sleepValue <= 0.59f && sleepValue >= 0.4f)
             {
                 sleepString = "Awake...ish";
             }
-            else if (sleepMeterValue <= 0.39f && sleepMeterValue >= 0.2f)
+            else if (sleepValue <= 0.39f && sleepValue >= 0.2f)
             {
                 sleepString = "Tired";
             }
@@ -92,11 +93,6 @@ public class EscapeMenuManager : MonoBehaviour
                 }
             }
         }
-        else
-        {
-            Debug.Log("RELATIONSHIP HOLDER IS NOT IN THIS SCENE!");
-        }
-
     }
 
     private void UpdateRelationship(string charName, int level)
@@ -159,6 +155,14 @@ public class EscapeMenuManager : MonoBehaviour
             for (int i = 0; i < level; i++)
             {
                 hearts_relationship.transform.GetChild(i).GetComponent<Image>().sprite = normalHeart;
+            }
+        }
+
+        if (level < 0)
+        {
+            for (int i = 0; i < Mathf.Abs(level); i++)
+            {
+                hearts_relationship.transform.GetChild(i).GetComponent<Image>().sprite = brokenHeart;
             }
         }
     }

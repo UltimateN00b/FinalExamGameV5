@@ -22,24 +22,16 @@ public class NextDaySceneStarter : MonoBehaviour
     private void OnLevelWasLoaded(int level)
     {
         Debug.Log("CURR NUM DAYS: " + _numDays);
+
         if (SceneManager.GetActiveScene().name.Contains("TheNextDay"))
         {
-            if (_numDays < 3)
-            {
                 _numDays++;
-            }
         }
     }
 
     public static void NextDay()
     {
         int upcomingNumDays = _numDays + 1;
-
-        if (upcomingNumDays >= 3)
-        {
-            upcomingNumDays = 3;
-        }
-
         GameObject.Find("FadeCanvas 1").GetComponent<FadeCanvasLegacy>().ChangeScene("TheNextDay" + upcomingNumDays);
     }
 

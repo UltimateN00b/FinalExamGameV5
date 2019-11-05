@@ -34,7 +34,6 @@ public class TurnManager : MonoBehaviour
         SetStartingCharacter();
 
         _currChar = _charactersInCombat.IndexOf(_currTurnCharacter);
-        Debug.Log("CHARACTERS IN COMBAT: "+_charactersInCombat.Count);
     }
 
     // Update is called once per frame

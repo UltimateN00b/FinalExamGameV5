@@ -6,11 +6,9 @@ using UnityEngine;
 public class Relationship : MonoBehaviour
 {
     public string characterName;
-    public float startingProgressToNextLevel;
     public Sprite characterSprite;
     public Color characterColour;
-    private int _currLevel;
-    private float _currProgressToNextLevel;
+    private float _currLevel;
 
     private bool _discovered;
 
@@ -18,7 +16,6 @@ public class Relationship : MonoBehaviour
     void Start()
     {
         _currLevel = 0;
-        _currProgressToNextLevel = startingProgressToNextLevel;
         _discovered = false;
     }
 
@@ -34,12 +31,13 @@ public class Relationship : MonoBehaviour
 
     public int GetCurrLevel()
     {
-        return _currLevel;
-    }
-
-    public float GetProgress()
-    {
-        return _currProgressToNextLevel;
+        if (_currLevel >= 0)
+        {
+            return Mathf.FloorToInt(_currLevel);
+        } else
+        {
+            return (int)(_currLevel);
+        }
     }
 
     public Sprite GetCharacterSprite()
@@ -52,14 +50,9 @@ public class Relationship : MonoBehaviour
         return characterColour;
     }
 
-    public void SetCurrLevel(int newLevel)
+    public void SetCurrLevel(float newLevel)
     {
         _currLevel = newLevel;
-    }
-
-    public void SetProgress(float newProgress)
-    {
-        _currProgressToNextLevel = newProgress;
     }
 
     public void SetDiscovered()

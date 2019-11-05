@@ -115,11 +115,11 @@ public class MainText : MonoBehaviour
 
     public void SetCurrentRelationship(string characterName)
     {
-        GameObject.Find("RelationshipCanvas").GetComponent<RelationshipCanvas>().SetCurrRelationship(characterName);
+        GameObject.Find("RelationshipObject").GetComponent<RelationshipObject>().SetCurrRelationship(characterName);
     }
 
     public void UpdateCurrentRelationship(float changeNum)
     {
-        GameObject.Find("RelationshipCanvas").GetComponent<RelationshipCanvas>().UpdateRelationship(changeNum);
+        GameObject.Find("RelationshipObject").GetComponent<RelationshipObject>().UpdateRelationship(changeNum);
     }
 }

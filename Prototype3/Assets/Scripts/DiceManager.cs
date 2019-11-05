@@ -130,12 +130,6 @@ public class DiceManager : MonoBehaviour
             }
         }
 
-        foreach (Character c in DiceManager.GetCurrTargets())
-        {
-            Debug.Log(c.name);
-            //c.GetComponent<SpriteRenderer>().color = Color.red;
-        }
-
     }
 
     public static void AddTarget(Character target)

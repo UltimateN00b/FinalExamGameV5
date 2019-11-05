@@ -87,7 +87,6 @@ public class Dice : MonoBehaviour
 
         if (_resetDice)
         {
-            Debug.Log("TRYING TO RESET DICE");
             MoveAndResetDice();
         }
 

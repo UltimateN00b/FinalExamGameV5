@@ -259,7 +259,6 @@ public class ConfirmAttackButton : MonoBehaviour
             returnString = "specialAttack";
         }
 
-        Debug.Log("RETURN STRING " + returnString);
         return returnString;
     }
 
