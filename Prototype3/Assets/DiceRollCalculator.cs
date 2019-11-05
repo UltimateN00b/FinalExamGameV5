@@ -91,4 +91,40 @@ public class DiceRollCalculator : MonoBehaviour
 
         return diceRoll;
     }
+
+    public static int CalculateDiceRollTen()
+    {
+        int diceRoll = Random.Range(1, 138);
+
+        if (diceRoll <= 12)
+        {
+            int chanceOfTen = Random.Range(1, 3);
+
+            if (chanceOfTen == 1)
+            {
+                diceRoll = 1;
+            } else
+            {
+                diceRoll = 10;
+            }
+        }
+        else if (diceRoll <= 27)
+        {
+            diceRoll = Random.Range(2, 4);
+        }
+        else if (diceRoll <= 47)
+        {
+            diceRoll = Random.Range(4, 6);
+        }
+        else if (diceRoll <= 77)
+        {
+            diceRoll = Random.Range(6, 8);
+        }
+        else
+        {
+            diceRoll = Random.Range(8, 10);
+        }
+
+        return diceRoll;
+    }
 }

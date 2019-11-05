@@ -9876,7 +9876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1210153352951168, guid: 8f805010e66def44f99594f9b2491787, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224930315571803934, guid: 8f805010e66def44f99594f9b2491787,
         type: 3}
@@ -10567,11 +10567,13 @@ GameObject:
   - component: {fileID: 1464796172}
   - component: {fileID: 1464796175}
   - component: {fileID: 1464796177}
+  - component: {fileID: 1464796179}
   - component: {fileID: 1464796169}
   - component: {fileID: 1464796171}
   - component: {fileID: 1464796173}
   - component: {fileID: 1464796174}
   - component: {fileID: 1464796176}
+  - component: {fileID: 1464796180}
   - component: {fileID: 1464796178}
   m_Layer: 0
   m_Name: DiceTypeManager
@@ -10926,6 +10928,69 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfeb1f43ec06919438d41b4159d98d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1464796179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464796166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81cded445adc5d64b80580006f8efa1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diceName: Tenner
+  freezeSprites:
+  - {fileID: 21300000, guid: 054a161428422654ab2b9fdbe00b9d02, type: 3}
+  - {fileID: 21300002, guid: 054a161428422654ab2b9fdbe00b9d02, type: 3}
+  - {fileID: 21300004, guid: 054a161428422654ab2b9fdbe00b9d02, type: 3}
+  - {fileID: 21300006, guid: 054a161428422654ab2b9fdbe00b9d02, type: 3}
+  - {fileID: 21300010, guid: 054a161428422654ab2b9fdbe00b9d02, type: 3}
+  - {fileID: 21300012, guid: 054a161428422654ab2b9fdbe00b9d02, type: 3}
+  - {fileID: 21300014, guid: 054a161428422654ab2b9fdbe00b9d02, type: 3}
+  - {fileID: 21300016, guid: 054a161428422654ab2b9fdbe00b9d02, type: 3}
+  - {fileID: 21300008, guid: 054a161428422654ab2b9fdbe00b9d02, type: 3}
+  - {fileID: 21300018, guid: 054a161428422654ab2b9fdbe00b9d02, type: 3}
+  diceAnimator: {fileID: 9100000, guid: 19f7ed5cf477f5e41bb79f5607ee1ba0, type: 2}
+  m_OnStopped:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1464796180}
+        m_MethodName: OnStopped
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_OnStatusEffect:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1464796180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464796166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8183d333c52fd2841995a9d450b598d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1474605478
