@@ -67,15 +67,14 @@ public class DiceButtonDiceSelection : MonoBehaviour
     {
         if (_myDiceName != null && FindDiceSkin(_myDiceName) != null)
         {
-
             DiceSkin dS = FindDiceSkin(_myDiceName);
-            GameObject.Find("PopupCanvas").GetComponent<PopupCanvasDiceSelection>().Popup(dS.GetDiceInfoTitle(), dS.GetDiceInfoBody());
+            GameObject.Find("PopupCanvas").GetComponent<PopupCanvasDiceSelection>().Popup(dS.GetDiceInfoTitle(), dS.GetDiceInfoBody(), dS.GetDiceImage());
         } else if (this.gameObject.name.Contains("DefaultDice"))
         {
-            GameObject.Find("PopupCanvas").GetComponent<PopupCanvasDiceSelection>().Popup("Default Dice", "Dice for scrubs");
+            GameObject.Find("PopupCanvas").GetComponent<PopupCanvasDiceSelection>().Popup("Default Dice", "Dice for scrubs", null);
         } else
         {
-            GameObject.Find("PopupCanvas").GetComponent<PopupCanvasDiceSelection>().Popup("DICE LOCKED", "You need a higher relationship level to unlock this dice");
+            GameObject.Find("PopupCanvas").GetComponent<PopupCanvasDiceSelection>().Popup("DICE LOCKED", "You need a higher relationship level to unlock this dice", null);
         }
     }
 

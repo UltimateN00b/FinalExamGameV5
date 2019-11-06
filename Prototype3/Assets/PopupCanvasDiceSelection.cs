@@ -16,10 +16,16 @@ public class PopupCanvasDiceSelection : MonoBehaviour
 
     }
 
-    public void Popup(string name, string info)
+    public void Popup(string name, string info, Sprite s)
     {
         Utilities.SearchChild("DiceName", this.gameObject).GetComponent<Text>().text = name;
         Utilities.SearchChild("DiceInfo", this.gameObject).GetComponent<Text>().text = info;
+
+        if (s != null)
+        {
+            Utilities.SearchChild("DicePicture", this.gameObject).GetComponent<Image>().sprite = s;
+        }
+
         Show();
     }
 

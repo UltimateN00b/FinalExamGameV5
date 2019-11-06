@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class PlayerDiceHolder : MonoBehaviour
 {
 
-    private static string dice1 = "Tenner";
-    private static string dice2 = "Tenner";
-    private static string dice3 = "Tenner";
+    private static string dice1 = "Common";
+    private static string dice2 = "Empty";
+    private static string dice3 = "Empty";
 
     // Start is called before the first frame update
     void Start()

@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class MyImage : MonoBehaviour
 {
-
     public float fadeAmount;
     public bool fadeOnStart = false;
 

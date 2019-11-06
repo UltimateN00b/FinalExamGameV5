@@ -89,11 +89,13 @@ public class Character : MonoBehaviour
         if (!TurnManager.GetCurrTurnCharacter().tag.Contains("Enemy"))
         {
             DiceManager.EnableAllButtons();
+            GameObject.Find("EnemyTurnSquare").GetComponent<MyImage>().FadeOut();
         }
         else
         {
             GameObject.Find("ClickTheDice").GetComponent<Text>().text = "";
             TurnManager.GetCurrTurnCharacter().gameObject.GetComponent<EnemyAI>().ExecuteEnemyAI();
+            GameObject.Find("EnemyTurnSquare").GetComponent<MyImage>().FadeIn();
         }
 
         GameObject.Find("ConfirmAttackButton").GetComponent<CustomButton>().Disable();

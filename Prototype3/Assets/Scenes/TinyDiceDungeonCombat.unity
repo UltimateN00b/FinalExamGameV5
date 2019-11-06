@@ -464,13 +464,14 @@ GameObject:
   m_Component:
   - component: {fileID: 106407007}
   - component: {fileID: 106407006}
+  - component: {fileID: 106407008}
   m_Layer: 0
-  m_Name: TranslucentBlackSquare
+  m_Name: EnemyTurnSquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &106407006
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -507,9 +508,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 50
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 03ef4303b0bf10a4c85d954be5020f9f, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.3962264, g: 0.028034883, b: 0.028034883, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -527,12 +528,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106407005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalPosition: {x: 0, y: 1.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &106407008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106407005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4997181298e70524daa96f69af36c71d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeAmount: 0.05
+  fadeOnStart: 0
 --- !u!1 &106633251
 GameObject:
   m_ObjectHideFlags: 0
@@ -3917,7 +3932,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 855d33b545cab21428834363f27647dd, type: 3}
   m_Color: {r: 0.35586146, g: 0.28324133, b: 0.6320754, a: 1}
   m_FlipX: 0
@@ -7658,7 +7673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myName: Ayanda
-  characterImage: {fileID: 21300000, guid: 6f107f2c3731c71459374a64d66e3675, type: 3}
+  characterImage: {fileID: 21300000, guid: cf2f18def55b0b348a4bf3ba0ce72852, type: 3}
   initiative: 5
   hp: 50
   dice1Type: Poison
@@ -10218,7 +10233,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6f107f2c3731c71459374a64d66e3675, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf2f18def55b0b348a4bf3ba0ce72852, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12662,75 +12677,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1001 &1825864894
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7427423328982022018, guid: 23678e3759f00b54491804500a346ecb,
-        type: 3}
-      propertyPath: m_Name
-      value: SleepValueHolder
-      objectReference: {fileID: 0}
-    - target: {fileID: 7427423328982022016, guid: 23678e3759f00b54491804500a346ecb,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 586.707
-      objectReference: {fileID: 0}
-    - target: {fileID: 7427423328982022016, guid: 23678e3759f00b54491804500a346ecb,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 431.12103
-      objectReference: {fileID: 0}
-    - target: {fileID: 7427423328982022016, guid: 23678e3759f00b54491804500a346ecb,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 14.90321
-      objectReference: {fileID: 0}
-    - target: {fileID: 7427423328982022016, guid: 23678e3759f00b54491804500a346ecb,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7427423328982022016, guid: 23678e3759f00b54491804500a346ecb,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7427423328982022016, guid: 23678e3759f00b54491804500a346ecb,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7427423328982022016, guid: 23678e3759f00b54491804500a346ecb,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7427423328982022016, guid: 23678e3759f00b54491804500a346ecb,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 7427423328982022016, guid: 23678e3759f00b54491804500a346ecb,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7427423328982022016, guid: 23678e3759f00b54491804500a346ecb,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7427423328982022016, guid: 23678e3759f00b54491804500a346ecb,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 23678e3759f00b54491804500a346ecb, type: 3}
 --- !u!1 &1830185005
 GameObject:
   m_ObjectHideFlags: 0
@@ -12901,7 +12847,7 @@ Transform:
   m_LocalScale: {x: 0.243017, y: 0.243017, z: 0.243017}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1873423512
 GameObject:
