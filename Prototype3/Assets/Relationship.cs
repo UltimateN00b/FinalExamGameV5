@@ -8,7 +8,7 @@ public class Relationship : MonoBehaviour
     public string characterName;
     public Sprite characterSprite;
     public Color characterColour;
-    private float _currLevel;
+    public float _currLevel;
 
     private bool _discovered;
 
@@ -38,6 +38,11 @@ public class Relationship : MonoBehaviour
         {
             return (int)(_currLevel);
         }
+    }
+
+    public float GetCurrLevelSpecific()
+    {
+       return _currLevel;
     }
 
     public Sprite GetCharacterSprite()

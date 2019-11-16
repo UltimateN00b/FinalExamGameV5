@@ -48,6 +48,16 @@ public class NodeSearchWindow : EditorWindow {
         {
             SearchCharacters();
         }
+
+        if (GUILayout.Button("Search Choices"))
+        {
+            SearchChoices();
+        }
+
+        if (GUILayout.Button("Select Only Choice Nodes"))
+        {
+            SelectOnlyChoiceNodes();
+        }
     }
 
     private void SearchMultipleSelections()
@@ -177,6 +187,60 @@ public class NodeSearchWindow : EditorWindow {
             if (currCharacterName != null)
             {
                 if (currCharacterName.ToUpper().Contains(searchString.ToUpper()))
+                {
+                    finalSelection.Add(currChild);
+                }
+            }
+        }
+
+        Selection.objects = finalSelection.ToArray();
+    }
+
+    private void SearchChoices()
+    {
+        GameObject searchObject = GameObject.Find("NodesCanvas");
+
+        List<GameObject> finalSelection = new List<GameObject>();
+
+        // Do comparison here. For example
+        for (int i = 0; i < searchObject.transform.childCount; i++)
+        {
+            GameObject currChild = searchObject.transform.GetChild(i).gameObject;
+
+            if (currChild.GetComponent<Text>() != null)
+            {
+                for (int j = 0; j < currChild.transform.childCount; j++)
+                {
+                    if (currChild.transform.GetChild(j).name.Contains("Choice"))
+                    {
+                        string choice = currChild.transform.GetChild(j).GetComponent<Text>().text;
+
+                        if (choice.ToUpper().Contains(searchString.ToUpper()))
+                        {
+                            finalSelection.Add(currChild);
+                        }
+                    }
+                }
+            }
+        }
+
+        Selection.objects = finalSelection.ToArray();
+    }
+
+    private void SelectOnlyChoiceNodes()
+    {
+        GameObject searchObject = GameObject.Find("NodesCanvas");
+
+        List<GameObject> finalSelection = new List<GameObject>();
+
+        // Do comparison here. For example
+        for (int i = 0; i < searchObject.transform.childCount; i++)
+        {
+            GameObject currChild = searchObject.transform.GetChild(i).gameObject;
+
+            if (currChild.GetComponent<Text>() != null)
+            {
+                if (currChild.transform.GetChild(0).gameObject.name.Contains("Choice"))
                 {
                     finalSelection.Add(currChild);
                 }

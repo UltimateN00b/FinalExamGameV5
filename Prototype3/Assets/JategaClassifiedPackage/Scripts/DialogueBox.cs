@@ -39,6 +39,9 @@ public class DialogueBox : MonoBehaviour
 
     private bool _havingEpisode;
 
+    private int _sleepDeprivedNode;
+    private int _enoughSleepNode;
+
     // Use this for initialization
     void Start()
     {
@@ -385,11 +388,16 @@ public class DialogueBox : MonoBehaviour
         choiceGO.GetComponent<ChoiceButton>().SetOnPressedEvent(currChoice.GetOnChosenEvent());
         choiceGO.GetComponent<ChoiceButton>().SetMyChoice(currChoice);
 
+        if (currChoice.GetComponent<Choice>().isDisabled())
+        {
+            choiceGO.GetComponent<ChoiceButton>().DisableChoice();
+        }
+
         currChoice.GetOnShownEvent().Invoke();
 
         if (currChoice.CheckSeen())
         {
-            choiceGO.GetComponent<Image>().color = Color.cyan;
+            //choiceGO.GetComponent<Image>().color = Color.cyan;
         } else
         {
             choiceGO.GetComponent<Image>().color = Color.white;
@@ -566,5 +574,26 @@ public class DialogueBox : MonoBehaviour
     public void GoToNextNegativeEvent()
     {
         GameObject.FindGameObjectWithTag("NegativeEventHolder").GetComponent<NegativeEventHolder>().GoToNextNEDialogue();
+    }
+
+    //Use Set Sleep Deprived Node, Set Enough Sleep Node and Change Node On Sleep Meter Less Than Together
+    public void SetSleepDeprivedNode(int sleepDeprivedNode)
+    {
+        _sleepDeprivedNode = sleepDeprivedNode;
+    }
+
+    public void SetEnoughSleepNode(int enoughSleepNode)
+    {
+        _enoughSleepNode = enoughSleepNode;
+    }
+    public void ChangeNodeOnSleepMeterLessThan(float sleepMeterValue)
+    {
+        if (SleepValueHolder.GetSleepValue() < sleepMeterValue)
+        {
+            ChangeNode(_sleepDeprivedNode);
+        } else
+        {
+            ChangeNode(_enoughSleepNode);
+        }
     }
 }

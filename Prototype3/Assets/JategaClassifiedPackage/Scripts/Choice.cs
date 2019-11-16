@@ -12,6 +12,8 @@ public class Choice : MonoBehaviour {
     private string _choiceText;
     private bool _seen;
 
+    private bool _disabled;
+
 	// Use this for initialization
 	void Start () {
         Hide();
@@ -49,13 +51,13 @@ public class Choice : MonoBehaviour {
 
     public void SetSeen()
     {
-        _seen = true;
-        string myText = this.GetComponent<Text>().text;
+        //_seen = true;
+        //string myText = this.GetComponent<Text>().text;
 
-        if (!myText.Contains(" [SEEN]"))
-        {
-            this.GetComponent<Text>().text = myText + " [SEEN]";
-        }
+        //if (!myText.Contains(" [SEEN]"))
+        //{
+        //    this.GetComponent<Text>().text = myText + " [SEEN]";
+        //}
     }
 
     public bool CheckSeen()
@@ -74,7 +76,9 @@ public class Choice : MonoBehaviour {
         {
             int childIndex = int.Parse(this.gameObject.name.Substring(this.gameObject.name.Length - 1));
             childIndex -= 1;
-            GameObject.Find("ChoiceButton" + childIndex).GetComponent<ChoiceButton>().DisableChoice();
+
+            GameObject dialogueCanvas = GameObject.Find("DialogueCanvasDecorated");
+            Utilities.SearchChild(("ChoiceButton" + childIndex), dialogueCanvas).GetComponent<ChoiceButton>().DisableChoice();
         }
     }
 
@@ -83,12 +87,24 @@ public class Choice : MonoBehaviour {
         int childIndex = int.Parse(this.gameObject.name.Substring(this.gameObject.name.Length - 1));
         childIndex -= 1;
 
+        GameObject dialogueCanvas = GameObject.Find("DialogueCanvasDecorated");
+
         if (SleepValueHolder.GetSleepValue() > meterCheck)
         {
-            GameObject.Find("ChoiceButton" + childIndex).GetComponent<ChoiceButton>().EnableChoiceWithIcon();
+            Utilities.SearchChild(("ChoiceButton" + childIndex), dialogueCanvas).GetComponent<ChoiceButton>().EnableChoiceWithIcon();
         } else
         {
-            GameObject.Find("ChoiceButton" + childIndex).SetActive(false);
+            Utilities.SearchChild(("ChoiceButton" + childIndex), dialogueCanvas).SetActive(false);
         }
+    }
+
+    public void SetDisabled(bool disabled)
+    {
+        _disabled = disabled;
+    }
+
+    public bool isDisabled()
+    {
+        return _disabled;
     }
 }

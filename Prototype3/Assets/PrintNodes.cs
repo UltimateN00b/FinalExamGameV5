@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class PrintNodes : MonoBehaviour
 {
-    public bool printProofCopy;
+    public bool printProofCopy = true;
     public bool printNodeNumber;
-    public int startFrom;
+    public int startFrom = 36;
 
     // Start is called before the first frame update
     void Start()

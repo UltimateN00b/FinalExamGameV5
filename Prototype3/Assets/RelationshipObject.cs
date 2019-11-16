@@ -47,7 +47,7 @@ public class RelationshipObject : MonoBehaviour
         {
             float tempLevel = _currRelationship.GetCurrLevel();
 
-            _currRelationship.SetCurrLevel(_currRelationship.GetCurrLevel()+changeAmount);
+            _currRelationship.SetCurrLevel(_currRelationship.GetCurrLevelSpecific()+changeAmount);
 
             Vector3 particlePos = GameObject.Find(_currRelationship.GetCharacterName() + "_ChatBot").transform.position;
             particlePos.z -= 3f;
