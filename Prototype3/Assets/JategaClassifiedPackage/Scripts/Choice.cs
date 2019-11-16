@@ -14,6 +14,8 @@ public class Choice : MonoBehaviour {
 
     private bool _disabled;
 
+    private bool _setCompletelyInactive;
+
 	// Use this for initialization
 	void Start () {
         Hide();
@@ -107,4 +109,5 @@ public class Choice : MonoBehaviour {
     {
         return _disabled;
     }
+
 }
