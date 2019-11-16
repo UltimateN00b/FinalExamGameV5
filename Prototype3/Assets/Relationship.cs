@@ -15,8 +15,8 @@ public class Relationship : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _currLevel = 0;
-        _discovered = false;
+       // _currLevel = 0;
+        _discovered = true;
     }
 
     // Update is called once per frame
