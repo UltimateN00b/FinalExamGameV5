@@ -8,15 +8,15 @@ public class Relationship : MonoBehaviour
     public string characterName;
     public Sprite characterSprite;
     public Color characterColour;
-    public float _currLevel;
+    private float _currLevel;
 
-    private bool _discovered;
+    public bool _discovered;
 
     // Start is called before the first frame update
     void Start()
     {
-        _currLevel = 2;
-        _discovered = false;
+       _currLevel = 0;
+       _discovered = false;
     }
 
     // Update is called once per frame
