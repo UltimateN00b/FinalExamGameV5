@@ -16,7 +16,7 @@ public class SleepValueHolder : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
-        _sleepValue = 0.5f;
+        _sleepValue = 0.1f;
         _fightOutcomeString = "";
 
         _amountChanged = 0f;
