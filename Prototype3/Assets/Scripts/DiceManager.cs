@@ -173,19 +173,20 @@ public class DiceManager : MonoBehaviour
 
                 healthBar.GetComponent<HealthBar>().ChangeHealth(-damage);
 
-                if (c.GetComponent<Character>().GetCurrHP() <= 0)
-                {
-                    if (c.tag.Contains("Player"))
-                    {
-                        GameObject.Find("Ayanda").GetComponent<Animator>().SetBool("dying", true);
-                    } else
-                    {
-                        if (!TutorialManager.IsTutorial())
-                        {
-                            GameObject.Find("AyandaMonster").GetComponent<Animator>().SetBool("dying", true);
-                        }
-                    }
-                }
+                //if (c.GetComponent<Character>().GetCurrHP() <= 0)
+                //{
+                //    if (c.tag.Contains("Player"))
+                //    {
+                //        GameObject.Find("Ayanda").GetComponent<Animator>().SetBool("dying", true);
+                //    } else
+                //    {
+                //        if (!TutorialManager.IsTutorial())
+                //        {
+                //            GameObject.Find("AyandaMonster").GetComponent<Animator>().SetBool("dying", true);
+                //            GameObject.Find("Ayanda").GetComponent<Animator>().SetBool("winning", true);
+                //        }
+                //    }
+                //}
             }
         }
     }

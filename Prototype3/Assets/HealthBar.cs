@@ -36,6 +36,7 @@ public class HealthBar : MonoBehaviour
 
                 _death = true;
 
+
                 if (TurnManager.GetCurrTurnCharacter().tag.Contains("Enemy"))
                 {
                     TurnManager.GetCurrTurnCharacter().GetComponent<EnemyAI>().CeaseEnemyAI();
@@ -50,6 +51,18 @@ public class HealthBar : MonoBehaviour
                     GameObject overkillCanvas = Utilities.SearchChild("OverkillCanvas", TurnManager.GetCurrTurnCharacter());
                     GameObject overkillIndicator = Utilities.SearchChild("OverkillIndicator", overkillCanvas);
                     overkillIndicator.GetComponent<OverkillIndicator>().ShowOverkill((int)(TurnManager.GetCurrTurnCharacter().GetComponent<Character>().GetCurrHP()));
+
+                    if (TurnManager.GetCurrTurnCharacter().tag.Contains("Enemy"))
+                    {
+                        GameObject.Find("Ayanda").GetComponent<Animator>().SetBool("winning", true);
+                        if (!TutorialManager.IsTutorial())
+                        {
+                        GameObject.Find("AyandaMonster").GetComponent<Animator>().SetBool("dying", true);
+                        }
+                    } else
+                    {
+                        GameObject.Find("Ayanda").GetComponent<Animator>().SetBool("dying", true);
+                    }
                 }
 
                 if (!TutorialManager.IsTutorial())

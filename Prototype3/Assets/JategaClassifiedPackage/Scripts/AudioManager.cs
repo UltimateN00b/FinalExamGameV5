@@ -1,16 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour {
 
+    private static float _volume = 0.3f;
+
 	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+	void Awake () {
+
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        if (SceneManager.GetActiveScene().name.Contains("TinyDiceDungeonCombat"))
+        {
+            _volume = 0.2f;
+        }
+        else
+        {
+            _volume = 1f;
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
@@ -24,14 +39,14 @@ public class AudioManager : MonoBehaviour {
             if (myAudioSource.isPlaying)
             {
                 backupAudioSource.clip = newClip;
-                backupAudioSource.volume = 1;
+                backupAudioSource.volume = _volume;
                 backupAudioSource.loop = false;
                 backupAudioSource.Play();
             }
             else
             {
                 myAudioSource.clip = newClip;
-                myAudioSource.volume = 1;
+                myAudioSource.volume = _volume;
                 myAudioSource.loop = false;
                 myAudioSource.Play();
             }
