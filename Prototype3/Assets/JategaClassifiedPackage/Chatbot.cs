@@ -105,36 +105,39 @@ public class Chatbot : MonoBehaviour {
 
     public void ChangeExpression(string expression)
     {
-        Sprite changeSprite = null;
-
-        if (this.GetComponent<SpriteRenderer>() != null)
+        if (expression != "")
         {
-            changeSprite = this.GetComponent<SpriteRenderer>().sprite;
-        }
+            Sprite changeSprite = null;
 
-        if (this.GetComponent<Image>()!=null)
-        {
-            changeSprite = this.GetComponent<Image>().sprite;
-        }
-
-        foreach (Sprite s in myExpressions)
-        {
-            string expressionName = s.name;
-
-            if (expressionName.ToUpper().Contains(expression.ToUpper()))
+            if (this.GetComponent<SpriteRenderer>() != null)
             {
-                changeSprite = s;
+                changeSprite = this.GetComponent<SpriteRenderer>().sprite;
             }
-        }
 
-        if (this.GetComponent<SpriteRenderer>() != null)
-        {
-            this.GetComponent<SpriteRenderer>().sprite = changeSprite;
-        }
+            if (this.GetComponent<Image>() != null)
+            {
+                changeSprite = this.GetComponent<Image>().sprite;
+            }
 
-        if (this.GetComponent<Image>() != null)
-        {
-            this.GetComponent<Image>().sprite = changeSprite;
+            foreach (Sprite s in myExpressions)
+            {
+                string expressionName = s.name;
+
+                if (expressionName.ToUpper().Contains(expression.ToUpper()))
+                {
+                    changeSprite = s;
+                }
+            }
+
+            if (this.GetComponent<SpriteRenderer>() != null)
+            {
+                this.GetComponent<SpriteRenderer>().sprite = changeSprite;
+            }
+
+            if (this.GetComponent<Image>() != null)
+            {
+                this.GetComponent<Image>().sprite = changeSprite;
+            }
         }
     }
 
