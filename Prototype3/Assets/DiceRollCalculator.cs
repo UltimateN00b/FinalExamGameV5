@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DiceRollCalculator : MonoBehaviour
 {
@@ -18,31 +19,49 @@ public class DiceRollCalculator : MonoBehaviour
 
     public static int CalculateDiceRollSix()
     {
-        int diceRoll = Random.Range(1, 138);
+        int aP = 0;
 
-        if (diceRoll <= 12)
+        if (DiceManager.FindTypeTotalGameObject("AP") != null)
         {
-            diceRoll = 1;
+            aP = int.Parse(DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text);
         }
-        else if (diceRoll <= 27)
+
+
+
+        int diceRoll = 0;
+
+        if (aP >= 30)
         {
-            diceRoll = 2;
+            diceRoll = Random.Range(1, 3);
         }
-        else if (diceRoll <= 47)
+        else
         {
-            diceRoll = 3;
-        }
-        else if (diceRoll <= 77)
-        {
-            diceRoll = 4;
-        }
-        else if (diceRoll <= 107)
-        {
-            diceRoll = 5;
-        }
-        else //137
-        {
-            diceRoll = 6;
+            diceRoll = Random.Range(1, 138);
+
+            if (diceRoll <= 12)
+            {
+                diceRoll = 1;
+            }
+            else if (diceRoll <= 27)
+            {
+                diceRoll = 2;
+            }
+            else if (diceRoll <= 47)
+            {
+                diceRoll = 3;
+            }
+            else if (diceRoll <= 77)
+            {
+                diceRoll = 4;
+            }
+            else if (diceRoll <= 107)
+            {
+                diceRoll = 5;
+            }
+            else //137
+            {
+                diceRoll = 6;
+            }
         }
 
         return diceRoll;
@@ -50,43 +69,74 @@ public class DiceRollCalculator : MonoBehaviour
 
     public static int CalculateDiceRollFour()
     {
-        int diceRoll = Random.Range(1, 138);
+        int aP = 0;
 
-        if (diceRoll <= 12)
+        if (DiceManager.FindTypeTotalGameObject("AP") != null)
         {
-            diceRoll = 1;
+            aP = int.Parse(DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text);
         }
-        else if (diceRoll <= 27)
+
+        int diceRoll = 0;
+
+        if (aP >= 30)
         {
-            diceRoll = 2;
-        }
-        else if (diceRoll <= 47)
-        {
-            diceRoll = 3;
+            diceRoll = Random.Range(1, 3);
         }
         else
         {
-            diceRoll = 4;
-        }
+             diceRoll = Random.Range(1, 138);
 
+            if (diceRoll <= 12)
+            {
+                diceRoll = 1;
+            }
+            else if (diceRoll <= 27)
+            {
+                diceRoll = 2;
+            }
+            else if (diceRoll <= 47)
+            {
+                diceRoll = 3;
+            }
+            else
+            {
+                diceRoll = 4;
+            }
+        }
         return diceRoll;
     }
 
     public static int CalculateDiceRollThree()
     {
-        int diceRoll = Random.Range(1, 138);
+        int aP = 0;
 
-        if (diceRoll <= 12)
+        if (DiceManager.FindTypeTotalGameObject("AP") != null)
         {
-            diceRoll = 1;
+            aP = int.Parse(DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text);
         }
-        else if (diceRoll <= 27)
+
+        int diceRoll = 0;
+
+        if (aP >= 30)
         {
-            diceRoll = 2;
+            diceRoll = Random.Range(1, 3);
         }
         else
         {
-            diceRoll = 3;
+             diceRoll = Random.Range(1, 138);
+
+            if (diceRoll <= 12)
+            {
+                diceRoll = 1;
+            }
+            else if (diceRoll <= 27)
+            {
+                diceRoll = 2;
+            }
+            else
+            {
+                diceRoll = 3;
+            }
         }
 
         return diceRoll;
@@ -94,37 +144,53 @@ public class DiceRollCalculator : MonoBehaviour
 
     public static int CalculateDiceRollTen()
     {
-        int diceRoll = Random.Range(1, 138);
+        int aP = 0;
 
-        if (diceRoll <= 12)
+        if (DiceManager.FindTypeTotalGameObject("AP") != null)
         {
-            int chanceOfTen = Random.Range(1, 3);
+            aP = int.Parse(DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text);
+        }
 
-            if (chanceOfTen == 1)
-            {
-                diceRoll = 1;
-            } else
-            {
-                diceRoll = 10;
-            }
-        }
-        else if (diceRoll <= 27)
+        int diceRoll = 0;
+
+        if (aP >= 30)
         {
-            diceRoll = Random.Range(2, 4);
-        }
-        else if (diceRoll <= 47)
-        {
-            diceRoll = Random.Range(4, 6);
-        }
-        else if (diceRoll <= 77)
-        {
-            diceRoll = Random.Range(6, 8);
+            diceRoll = Random.Range(1, 3);
         }
         else
         {
-            diceRoll = Random.Range(8, 10);
-        }
+            diceRoll = Random.Range(1, 138);
 
+            if (diceRoll <= 12)
+            {
+                int chanceOfTen = Random.Range(1, 3);
+
+                if (chanceOfTen == 1)
+                {
+                    diceRoll = 1;
+                }
+                else
+                {
+                    diceRoll = 10;
+                }
+            }
+            else if (diceRoll <= 27)
+            {
+                diceRoll = Random.Range(2, 4);
+            }
+            else if (diceRoll <= 47)
+            {
+                diceRoll = Random.Range(4, 6);
+            }
+            else if (diceRoll <= 77)
+            {
+                diceRoll = Random.Range(6, 8);
+            }
+            else
+            {
+                diceRoll = Random.Range(8, 10);
+            }
+        }
         return diceRoll;
     }
 }

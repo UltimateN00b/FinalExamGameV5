@@ -257,6 +257,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 20a8adbc6da31374291bb02a3b55b12b,
         type: 3}
+    - target: {fileID: 256434002, guid: c1f956aafd6005748b6a40cd07a13c9d, type: 3}
+      propertyPath: hp
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 256434000, guid: c1f956aafd6005748b6a40cd07a13c9d, type: 3}
       propertyPath: timeBetweenDiceRolls
       value: 1.1
@@ -287,6 +291,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 20a8adbc6da31374291bb02a3b55b12b,
         type: 3}
+    - target: {fileID: 1130384206, guid: c1f956aafd6005748b6a40cd07a13c9d, type: 3}
+      propertyPath: hp
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1130384204, guid: c1f956aafd6005748b6a40cd07a13c9d, type: 3}
       propertyPath: timeBetweenDiceRolls
       value: 1.1
@@ -14503,7 +14511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0001993193, y: -0.00007372714}
+  m_AnchoredPosition: {x: 0.00015806983, y: 0.00004906771}
   m_SizeDelta: {x: -10.827255, y: 0}
   m_Pivot: {x: 2.25, y: 1}
 --- !u!114 &1130653302

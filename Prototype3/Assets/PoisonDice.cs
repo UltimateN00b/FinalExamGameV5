@@ -22,7 +22,7 @@ public class PoisonDice : MonoBehaviour
     public void OnStopped()
     {
         Random.InitState((int)System.DateTime.Now.Ticks);
-        int diceRoll = DiceRollCalculator.CalculateDiceRollSix();
+        int diceRoll = DiceRollCalculator.CalculateDiceRollFour();
 
         GameObject.Find("ClickTheDice").GetComponent<Text>().text = "DICE VALUES: ";
 
@@ -81,7 +81,14 @@ public class PoisonDice : MonoBehaviour
         GameObject.Find(rollValueName).GetComponent<Text>().text = diceRoll.ToString();
 
         int poisonTotal = int.Parse(DiceManager.FindTypeTotalGameObject("PP").transform.GetChild(0).GetComponent<Text>().text);
-        poisonTotal += diceRoll;
+
+            poisonTotal += diceRoll;
+
+        if (poisonTotal > 10)
+        {
+            poisonTotal = 10;
+        }
+
         DiceManager.FindTypeTotalGameObject("PP").transform.GetChild(0).GetComponent<Text>().text = poisonTotal.ToString();
 
         int attackTotal = int.Parse(DiceManager.FindTypeTotalGameObject("AP").transform.GetChild(0).GetComponent<Text>().text);

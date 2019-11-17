@@ -590,7 +590,7 @@ MonoBehaviour:
   speed: 5
   timeBeforeChange: 5
   fadeCanvas: {fileID: 1210154075411628}
-  nextScene: WakeUpNarrative1
+  nextScene: SleepMeterInstructions
 --- !u!114 &1912449623
 MonoBehaviour:
   m_ObjectHideFlags: 0
