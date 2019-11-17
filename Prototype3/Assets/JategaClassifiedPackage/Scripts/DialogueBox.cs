@@ -625,4 +625,32 @@ public class DialogueBox : MonoBehaviour
             ChangeNode(_enoughSleepNode);
         }
     }
+
+    public void DisappearSuperficially()
+    {
+        Utilities.SearchChild("BackgroundImage", this.gameObject).GetComponent<Image>().enabled = false;
+        Utilities.SearchChild("CurrentCharacterImage", this.gameObject).GetComponent<Image>().enabled = false;
+        Utilities.SearchChild("CurrentCharacterText", this.gameObject).GetComponent<Text>().enabled = false;
+
+        GameObject controlsUI = GameObject.Find("WrightControlsUI");
+
+        for (int i = 0; i < controlsUI.transform.childCount; i++)
+        {
+            controlsUI.transform.GetChild(i).gameObject.SetActive(false);
+        }
+    }
+
+    public void ReAppearSuperficially()
+    {
+        Utilities.SearchChild("BackgroundImage", this.gameObject).GetComponent<Image>().enabled = true;
+        Utilities.SearchChild("CurrentCharacterImage", this.gameObject).GetComponent<Image>().enabled = true;
+        Utilities.SearchChild("CurrentCharacterText", this.gameObject).GetComponent<Text>().enabled = true;
+
+        GameObject controlsUI = GameObject.Find("WrightControlsUI");
+
+        for (int i = 0; i < controlsUI.transform.childCount; i++)
+        {
+            controlsUI.transform.GetChild(i).gameObject.SetActive(true);
+        }
+    }
 }
