@@ -9144,7 +9144,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 205647739}
   m_HandleRect: {fileID: 205647738}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -14308,7 +14308,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Wh...another nightmare...
+  m_Text: Another nightmare? I'm not even surprised...I feel INSERTSLEEPSTATEHERE...
 --- !u!222 &742760367
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14941,7 +14941,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Guess a good night's sleep is too much to ask for.
+  m_Text: I just hope I can survive Uni today...
 --- !u!222 &783585460
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15513,8 +15513,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: I mean I always have nightmares but I feel like they've gotten worse lately.
-    Maybe 'cos of Uni.
+  m_Text: '...and it''ll be nice to see Joey and Lana again.'
 --- !u!222 &794656152
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20105,7 +20104,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00010849851, y: 0.000010160198}
+  m_AnchoredPosition: {x: 0.00017586835, y: -0.00000015218455}
   m_SizeDelta: {x: -10.827255, y: 0}
   m_Pivot: {x: 2.25, y: 1}
 --- !u!114 &1130653302
@@ -23767,7 +23766,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: AASBNarrativeScene Test Scene 3
+          m_StringArgument: AASBNarrativeScene Test Scene 4
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -23833,7 +23832,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '...I should get going.'
+  m_Text: Somehow...I'm actually looking forward to it.
 --- !u!222 &1298225316
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -35232,7 +35231,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Speaking of...
+  m_Text: Yeah...
 --- !u!222 &2029014720
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36844,18 +36843,7 @@ MonoBehaviour:
   currCharacter: '?'
   m_OnClicked:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2123480498}
-        m_MethodName: MyQuit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Menu
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_OnShown:
@@ -36863,7 +36851,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  goToConsecutiveNodeOnClick: 0
+  goToConsecutiveNodeOnClick: 1
 --- !u!114 &2123480496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36898,7 +36886,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: To be continued...
+  m_Text: Mmm...nnnn...
 --- !u!222 &2123480497
 CanvasRenderer:
   m_ObjectHideFlags: 0

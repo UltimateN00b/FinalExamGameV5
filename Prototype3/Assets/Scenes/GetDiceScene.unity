@@ -949,6 +949,7 @@ GameObject:
   - component: {fileID: 677921598}
   - component: {fileID: 677921600}
   - component: {fileID: 677921599}
+  - component: {fileID: 677921601}
   m_Layer: 0
   m_Name: DiceSkinHolder
   m_TagString: Untagged
@@ -1055,6 +1056,23 @@ MonoBehaviour:
   diceButtonColor: {r: 0.514151, g: 0.9148352, b: 1, a: 1}
   diceInfoTitle: Sleep Paralysis Dice
   diceInfoBody: Makes one of the victim's dice unusable on their turn.
+--- !u!114 &677921601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677921594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb03cbf79229cf74a8fa521620935127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diceName: Tenner
+  diceImage: {fileID: 21300004, guid: 054a161428422654ab2b9fdbe00b9d02, type: 3}
+  diceButtonColor: {r: 1, g: 0.39999998, b: 0.42876756, a: 1}
+  diceInfoTitle: D10
+  diceInfoBody: A 10-sided dice that deals the damage it rolls.
 --- !u!1 &695740948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1461,7 +1479,7 @@ MonoBehaviour:
   buttonPrefab: {fileID: 4111797812463284867, guid: 257379588ea65a545acf84af7082c997,
     type: 3}
   unlockImage: {fileID: 21300000, guid: d45c454aa852b8a4388bbc0a461eff45, type: 3}
-  buttonGap: 150
+  buttonGap: 100
 --- !u!1 &895175136
 GameObject:
   m_ObjectHideFlags: 0
@@ -2312,10 +2330,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Joey
   characterImage: {fileID: 21300000, guid: ea274982e3ffc5d458a1b2a260389b08, type: 3}
-  unlockLevels: 0100000002000000
+  unlockLevels: 010000000200000003000000
   diceTypes:
   - Multiplier
   - LifeSteal
+  - Tenner
 --- !u!114 &1206544386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2330,10 +2349,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Lana
   characterImage: {fileID: 21300000, guid: 69050a23162da2f418bd3c3a29e6a6f9, type: 3}
-  unlockLevels: 0100000002000000
+  unlockLevels: 010000000200000003000000
   diceTypes:
   - Poison
   - SleepParalysis
+  - Tenner
 --- !u!1 &1239209318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,7 +2495,7 @@ PrefabInstance:
     - target: {fileID: 4111797812463284864, guid: 257379588ea65a545acf84af7082c997,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -59.300022
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 4111797812463284864, guid: 257379588ea65a545acf84af7082c997,
         type: 3}
@@ -2827,7 +2847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1210153352951168, guid: 8f805010e66def44f99594f9b2491787, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224930315571803934, guid: 8f805010e66def44f99594f9b2491787,
         type: 3}

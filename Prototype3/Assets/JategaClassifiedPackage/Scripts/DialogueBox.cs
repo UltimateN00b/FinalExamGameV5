@@ -77,6 +77,35 @@ public class DialogueBox : MonoBehaviour
                     _displayText = _displayText.Replace("INSERTOBJECTONE", UseItemManager.GetItemInUse().name);
                 }
 
+                if (_displayText.Contains("INSERTSLEEPSTATEHERE"))
+                {
+                    string sleepString = ""; ;
+                    float sleepValue = SleepValueHolder.GetSleepValue();
+
+                    if (sleepValue <= 1 && sleepValue >= 0.8f)
+                    {
+                        sleepString = "Energised";
+                    }
+                    else if (sleepValue <= 0.79f && sleepValue >= 0.6f)
+                    {
+                        sleepString = "Rested";
+                    }
+                    else if (sleepValue <= 0.59f && sleepValue >= 0.4f)
+                    {
+                        sleepString = "Awake...ish";
+                    }
+                    else if (sleepValue <= 0.39f && sleepValue >= 0.2f)
+                    {
+                        sleepString = "Tired";
+                    }
+                    else
+                    {
+                        sleepString = "Exhausted";
+                    }
+
+                    _displayText = _displayText.Replace("INSERTSLEEPSTATEHERE", "<b>"+ "<color=orange>" + sleepString+ "</color>" + " </b>");
+                }
+
                 ControlOverallTextDisplay(_displayText);
             }
 

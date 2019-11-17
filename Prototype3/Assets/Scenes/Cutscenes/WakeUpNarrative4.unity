@@ -9145,7 +9145,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 205647738}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -14308,8 +14308,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: What the hell? What was that...dream? I feel...INSERTSLEEPSTATEHERE...yeah
-    I guess that's the word. But what...oh no.
+  m_Text: I feel really...INSERTSLEEPSTATEHERE?
 --- !u!222 &742760367
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14905,18 +14904,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_OnShown:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2032459965}
-        m_MethodName: ChangeExpression
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: surprised
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   goToConsecutiveNodeOnClick: 1
@@ -14953,7 +14941,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: If my nightmare woke me up...
+  m_Text: I just hope I can survive the presentation today...
 --- !u!222 &783585460
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15525,10 +15513,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'That means my alarm didn''t wake me up...
-
-
-    ...And if my alarm didn''t wake me up...'
+  m_Text: I have to.
 --- !u!222 &794656152
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15784,18 +15769,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a0211197e18368499a3e927b524e1af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &836506796 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3639569612292899213, guid: 1aa59d3ac3373c442bdac9fcc1bc8948,
-    type: 3}
-  m_PrefabInstance: {fileID: 1001897732}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ffc9e5750293a74aa2df81cb4ec5020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &836595118
@@ -20131,7 +20104,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00019222146, y: 0.00001168262}
+  m_AnchoredPosition: {x: -0.00016809508, y: -0.00000015218455}
   m_SizeDelta: {x: -10.827255, y: 0}
   m_Pivot: {x: 2.25, y: 1}
 --- !u!114 &1130653302
@@ -23793,7 +23766,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ToUniTransition1
+          m_StringArgument: AASBNarrativeScene Test Scene 6
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -23807,18 +23780,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 722743460}
-        m_MethodName: set_clip
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 75384042584b54842a1249e2fc7e747d,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -23871,7 +23832,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: SHOOT I'M GOING TO BE LATE FOR UNI!
+  m_Text: Let's...do this.
 --- !u!222 &1298225316
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -35270,7 +35231,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Then...
+  m_Text: 'I will. '
 --- !u!222 &2029014720
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36837,6 +36798,7 @@ GameObject:
   - component: {fileID: 2123480497}
   - component: {fileID: 2123480496}
   - component: {fileID: 2123480495}
+  - component: {fileID: 2123480498}
   m_Layer: 5
   m_Name: Main_36
   m_TagString: Main
@@ -36878,7 +36840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f7795be51104304f82c7648ecfb2ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currCharacter: Ayanda
+  currCharacter: '?'
   m_OnClicked:
     m_PersistentCalls:
       m_Calls: []
@@ -36886,29 +36848,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_OnShown:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 836506796}
-        m_MethodName: Show
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2032459965}
-        m_MethodName: ChangeExpression
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: anxious
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   goToConsecutiveNodeOnClick: 1
@@ -36946,7 +36886,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: AAH!
+  m_Text: Ow...my head...
 --- !u!222 &2123480497
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36956,6 +36896,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123480493}
   m_CullTransparentMesh: 0
+--- !u!114 &2123480498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123480493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f065fa3df086399408c2149aecb437e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2125560284
 GameObject:
   m_ObjectHideFlags: 0

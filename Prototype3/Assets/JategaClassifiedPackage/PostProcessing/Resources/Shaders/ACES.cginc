@@ -326,7 +326,7 @@ half rgb_2_yc(half3 rgb)
     // ycRadiusWeight defaults to 1.75, although can be overridden in function
     // call to rgb_2_yc
     // ycRadiusWeight = 1 -> YC for pure 
-	, magenta, yellow == YC for neutral
+	//, magenta, yellow == YC for neutral
     // of same value
     // ycRadiusWeight = 2 -> YC for pure red, green, blue  == YC for  neutral of
     // same value.

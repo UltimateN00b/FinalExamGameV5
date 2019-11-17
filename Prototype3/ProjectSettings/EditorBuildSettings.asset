@@ -36,14 +36,14 @@ EditorBuildSettings:
     path: Assets/Scenes/AASBNarrativeScene Test Scene 2.unity
     guid: 295c8697d03389e47b09aadd8ea44738
   - enabled: 1
-    path: Assets/Scenes/GetDiceScene.unity
-    guid: b542cb7796b13bc4393a768cb2d1924d
-  - enabled: 1
     path: Assets/Scenes/Cutscenes/ThatNight1.unity
     guid: 94341ed314497fa4e8ca5d02cd6c20fa
   - enabled: 1
     path: Assets/Scenes/PreBattleScenes/PB_Segment1.unity
     guid: 5cf6696c2f50dba4188dd61077dc0e43
+  - enabled: 1
+    path: Assets/Scenes/GetDiceScene.unity
+    guid: b542cb7796b13bc4393a768cb2d1924d
   - enabled: 1
     path: Assets/Scenes/Instructions/DiceInstructions.unity
     guid: 38a89e5b2de17b544a2eee2fba540f46
@@ -80,6 +80,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PreBattleScenes/PB_Segment3.unity
     guid: 36e130d8b68d7774992a4270f01ee58d
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/TheNextDay4.unity
+    guid: 92772a2e2ff4bd047870bda9b4cc2fc5
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/WakeUpNarrative4.unity
+    guid: ce311b39d7b4e804b89745f3e6c75a63
+  - enabled: 1
+    path: Assets/Scenes/AASBNarrativeScene Test Scene 6.unity
+    guid: 9c57f35672aaf14408004758edc1c7aa
   - enabled: 1
     path: Assets/Scenes/TinyDiceDungeonCombat.unity
     guid: fa166847c2a7f44428d8ef4872f504f2

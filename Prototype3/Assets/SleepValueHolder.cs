@@ -80,10 +80,10 @@ public class SleepValueHolder : MonoBehaviour
         //Change the output string.
         if (SurrenderButton.HasSurrendered() || enemy.GetCurrHP() > 0)
         {
-            _fightOutcomeString = "Your sleep quality has declined.\nAyanda is feeling REPLACETHIS";
+            _fightOutcomeString = "Your sleep quality has declined.";
         }else if (player.GetCurrHP() > 0)
         {
-            _fightOutcomeString = "Your sleep quality has improved!\nAyanda is feeling REPLACETHIS";
+            _fightOutcomeString = "Your sleep quality has improved!";
         }
     }
 
@@ -102,9 +102,6 @@ public class SleepValueHolder : MonoBehaviour
         {
             ChangeSleepValueWithLimits(-_amountChanged);
         }
-
-
-        _fightOutcomeString = _fightOutcomeString.Replace("REPLACETHIS", CalculateAyandaFeeling(_sleepValue));
         GameObject.Find("SleepText").GetComponent<Text>().text = _fightOutcomeString;
     }
 
