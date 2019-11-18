@@ -32,6 +32,7 @@ public class SleepValueHolder : MonoBehaviour
         if (SceneManager.GetActiveScene().name.Contains("YouWin") || SceneManager.GetActiveScene().name.Contains("YouLose"))
         {
             ChangeFightOutputString();
+            SurrenderButton.SetSurrendered(false);
         }
     }
 
