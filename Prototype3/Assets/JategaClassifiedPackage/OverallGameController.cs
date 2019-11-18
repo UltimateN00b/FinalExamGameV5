@@ -7,10 +7,13 @@ public class OverallGameController : MonoBehaviour {
     private GameObject _instructionsCanvas;
 	// Use this for initialization
 	void Start () {
-        _instructionsCanvas = GameObject.Find("InstructionsCanvas");
-        _instructionsCanvas.GetComponent<EscapeMenuManager>().UpdateAyandaSleep();
-        _instructionsCanvas.GetComponent<EscapeMenuManager>().UpdateAllRelationships();
-        _instructionsCanvas.SetActive(false);
+        if (GameObject.Find("InstructionsCanvas") != null)
+        {
+            _instructionsCanvas = GameObject.Find("InstructionsCanvas");
+            _instructionsCanvas.GetComponent<EscapeMenuManager>().UpdateAyandaSleep();
+            _instructionsCanvas.GetComponent<EscapeMenuManager>().UpdateAllRelationships();
+            _instructionsCanvas.SetActive(false);
+        }
 	}
 	
 	// Update is called once per frame

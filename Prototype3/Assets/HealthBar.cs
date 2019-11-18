@@ -46,7 +46,7 @@ public class HealthBar : MonoBehaviour
                     DiceManager.DisableAllButtons();
                 }
 
-                if ((int)(TurnManager.GetCurrTurnCharacter().GetComponent<Character>().GetCurrHP()) < 0)
+                if ((int)(TurnManager.GetCurrTurnCharacter().GetComponent<Character>().GetCurrHP()) <= 0)
                 {
                     GameObject overkillCanvas = Utilities.SearchChild("OverkillCanvas", TurnManager.GetCurrTurnCharacter());
                     GameObject overkillIndicator = Utilities.SearchChild("OverkillIndicator", overkillCanvas);

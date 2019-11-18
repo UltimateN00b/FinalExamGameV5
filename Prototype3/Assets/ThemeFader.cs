@@ -23,7 +23,7 @@ public class ThemeFader : MonoBehaviour
                 _isPlaying = false;
                 this.GetComponent<AudioSource>().loop = false;
                 this.GetComponent<AudioFader>().FadeOut();
-                Camera.main.GetComponents<AudioFader>()[1].FadeIn();
+                GameObject.Find("Main Camera").GetComponents<AudioFader>()[1].FadeIn();
             }
         }
     }

@@ -9546,6 +9546,8 @@ GameObject:
   - component: {fileID: 534669906}
   - component: {fileID: 534669907}
   - component: {fileID: 534669908}
+  - component: {fileID: 534669910}
+  - component: {fileID: 534669909}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9761,6 +9763,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &534669909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36679e79f4eff82408c4e7dc9f951e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeAmount: 0.05
+  useTimer: 1
+  timeBeforeFadeIn: 0
+--- !u!114 &534669910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36679e79f4eff82408c4e7dc9f951e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeAmount: 0.05
+  useTimer: 1
+  timeBeforeFadeIn: 0
 --- !u!1 &542690710
 GameObject:
   m_ObjectHideFlags: 0
@@ -20104,7 +20136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00016383066, y: -0.00008945821}
+  m_AnchoredPosition: {x: 0.00012146471, y: -0.00008908783}
   m_SizeDelta: {x: -10.827255, y: 0}
   m_Pivot: {x: 2.25, y: 1}
 --- !u!114 &1130653302
@@ -24151,6 +24183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
   mainAudioSource: {fileID: 534669902}
+  maxVolume: 1
 --- !u!224 &1333599663 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224269080041570862, guid: c77b0ad7e7f71b0488425c4b7d692059,

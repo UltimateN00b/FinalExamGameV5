@@ -12,8 +12,13 @@ public class TutorialPointChecker : MonoBehaviour
     public string lifeStealPopupHeading;
     public string lifeStealPopupMessage;
 
+    public string paralysisPopupHeading;
+    public string paralysisPopupMessage;
+
+
     private static bool _hasShownPoisonDicePopup;
     private static bool _hasShownLifeStealPopup;
+    private static bool _hasShownParalysisPopupMessage;
 
     private static int _roundNum;
 
@@ -22,6 +27,7 @@ public class TutorialPointChecker : MonoBehaviour
     {
         _hasShownPoisonDicePopup = false;
         _hasShownLifeStealPopup = false;
+        _hasShownParalysisPopupMessage = false;
 
         _roundNum = 0;
 
@@ -53,7 +59,7 @@ public class TutorialPointChecker : MonoBehaviour
                 }
             }
         }
-        else if (NextDaySceneStarter.GetDayNum() == 2|| NextDaySceneStarter.GetDayNum() == 3)
+        else if (NextDaySceneStarter.GetDayNum() == 2)
         {
             if (!_hasShownLifeStealPopup)
             {
@@ -63,6 +69,20 @@ public class TutorialPointChecker : MonoBehaviour
                     {
                         GameObject.Find("TutorialCanvas_Basic").GetComponent<TutorialCanvasBasic>().MakeTutorialPopup(lifeStealPopupHeading, lifeStealPopupMessage);
                         _hasShownLifeStealPopup = true;
+                    }
+                }
+            }
+        }
+        else if (NextDaySceneStarter.GetDayNum() == 3)
+        {
+            if (!_hasShownParalysisPopupMessage)
+            {
+                if (SceneManager.GetActiveScene().name.Contains("TinyDiceDungeonCombat"))
+                {
+                    if (TurnManager.GetCurrTurnCharacter().tag.Contains("Enemy"))
+                    {
+                        GameObject.Find("TutorialCanvas_Basic").GetComponent<TutorialCanvasBasic>().MakeTutorialPopup(paralysisPopupHeading, paralysisPopupMessage);
+                        _hasShownParalysisPopupMessage = true;
                     }
                 }
             }

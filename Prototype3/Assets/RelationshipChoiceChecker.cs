@@ -69,7 +69,7 @@ public class RelationshipChoiceChecker : MonoBehaviour
 
         if (relationshipLessThan && conditionsMet)
         {
-            if (currRelationship.GetCurrLevel() > relMoreThanNum)
+            if (currRelationship.GetCurrLevel() > relLessThanNum)
             {
                 conditionsMet = false;
             }
@@ -93,11 +93,11 @@ public class RelationshipChoiceChecker : MonoBehaviour
 
         if (conditionsMet)
         {
-            Debug.Log("CONDITIONS MET!");
+            Debug.Log(this.gameObject.name+": CONDITIONS MET!");
             m_OnConditionsMet.Invoke();
         } else
         {
-            Debug.Log("CONDITIONS NOT MET!");
+            Debug.Log(this.gameObject.name + ": CONDITIONS NOT MET!");
             m_OnConditionsNotMet.Invoke();
         }
     }

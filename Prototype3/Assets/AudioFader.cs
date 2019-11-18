@@ -61,15 +61,20 @@ public class AudioFader : MonoBehaviour
         {
             _fadeIn = true;
         }
-        else if (GameObject.Find("ThemeFeeder") != null)
+        else
         {
-            if (!GameObject.Find("ThemeFader").GetComponent<ThemeFader>().IsPlaying())
+            if (GameObject.Find("ThemeFader") == null)
             {
                 _fadeIn = true;
             }
-        } else
-        {
-            _fadeIn = false;
+            else if (!GameObject.Find("ThemeFader").GetComponent<ThemeFader>().IsPlaying())
+            {
+                _fadeIn = true;
+            }
+            else
+            {
+                _fadeIn = false;
+            }
         }
     }
 

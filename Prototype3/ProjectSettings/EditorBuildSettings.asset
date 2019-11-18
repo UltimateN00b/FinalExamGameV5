@@ -99,6 +99,9 @@ EditorBuildSettings:
     path: Assets/Scenes/AASBNarrativeScene Test Scene 6.unity
     guid: 9c57f35672aaf14408004758edc1c7aa
   - enabled: 1
+    path: Assets/Scenes/Cutscenes/VersusScene.unity
+    guid: 7be327cc97cda5e49bb18db5a76a78f2
+  - enabled: 1
     path: Assets/Scenes/TinyDiceDungeonCombat.unity
     guid: fa166847c2a7f44428d8ef4872f504f2
   - enabled: 1
@@ -107,4 +110,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/YouLose.unity
     guid: b7e0a750cca8da74daddeef848dfcf0a
+  - enabled: 1
+    path: Assets/EffectExamples/CleanGame.unity
+    guid: ba3f4e64c44ee8141b8faf4e18ef68e5
   m_configObjects: {}

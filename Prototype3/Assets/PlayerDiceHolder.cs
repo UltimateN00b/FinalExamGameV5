@@ -15,7 +15,7 @@ public class PlayerDiceHolder : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -24,6 +24,13 @@ public class PlayerDiceHolder : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
+        if (SceneManager.GetActiveScene().name.Contains("CleanGame"))
+        {
+            dice1 = "Common";
+            dice2 = "Empty";
+            dice3 = "Empty";
+        }
+
         if (SceneManager.GetActiveScene().name.Contains("GetDiceScene"))
         {
             Show();

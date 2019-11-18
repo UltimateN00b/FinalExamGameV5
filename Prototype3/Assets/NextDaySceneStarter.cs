@@ -21,6 +21,11 @@ public class NextDaySceneStarter : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
+        if (SceneManager.GetActiveScene().name.Contains("CleanGame"))
+        {
+            _numDays = 0;
+        }
+
         Debug.Log("CURR NUM DAYS: " + _numDays);
 
         if (SceneManager.GetActiveScene().name.Contains("TheNextDay"))
