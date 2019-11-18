@@ -57,7 +57,20 @@ public class AudioFader : MonoBehaviour
 
     public void FadeIn()
     {
-        _fadeIn = true;
+        if (!this.gameObject.name.Contains("Camera"))
+        {
+            _fadeIn = true;
+        }
+        else if (GameObject.Find("ThemeFeeder") != null)
+        {
+            if (!GameObject.Find("ThemeFader").GetComponent<ThemeFader>().IsPlaying())
+            {
+                _fadeIn = true;
+            }
+        } else
+        {
+            _fadeIn = false;
+        }
     }
 
     public void FadeOut()

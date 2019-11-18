@@ -7,6 +7,7 @@ public class FadeCanvasLegacy : MonoBehaviour {
 
     public float fadeAmount;
     public GameObject mainAudioSource;
+    public float maxVolume = 1;
 
     private bool _fadeIn;
     private bool _fadeOut;
@@ -42,7 +43,10 @@ public class FadeCanvasLegacy : MonoBehaviour {
                 fadeCanvas.alpha -= fadeAmount;
                 if (mainAudioSource.GetComponent<AudioSource>() != null)
                 {
-                    mainAudioSource.GetComponent<AudioSource>().volume += fadeAmount;
+                    if (mainAudioSource.GetComponent<AudioSource>().volume < maxVolume)
+                    {
+                        mainAudioSource.GetComponent<AudioSource>().volume += fadeAmount;
+                    }
                 }
             }
             else

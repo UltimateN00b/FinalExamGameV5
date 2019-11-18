@@ -81,6 +81,9 @@ EditorBuildSettings:
     path: Assets/Scenes/AASBNarrativeScene Test Scene 5.unity
     guid: 1f22c8973fcdeb74e92daf789ed65fee
   - enabled: 1
+    path: Assets/Scenes/Cutscenes/ThatNight3.unity
+    guid: fd01dd2a3b279fd4ab83640c4f5be259
+  - enabled: 1
     path: Assets/Scenes/PreBattleScenes/PB_Segment3.unity
     guid: 36e130d8b68d7774992a4270f01ee58d
   - enabled: 1

@@ -7338,7 +7338,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 205647739}
   m_HandleRect: {fileID: 205647738}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -8053,6 +8053,7 @@ GameObject:
   - component: {fileID: 534669908}
   - component: {fileID: 534669909}
   - component: {fileID: 534669910}
+  - component: {fileID: 534669911}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8379,6 +8380,21 @@ MonoBehaviour:
   fadeAmount: 0.01
   useTimer: 1
   timeBeforeFadeIn: 5
+--- !u!114 &534669911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36679e79f4eff82408c4e7dc9f951e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeAmount: 0.01
+  useTimer: 1
+  timeBeforeFadeIn: 0
 --- !u!4 &557127291 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4401966089815654, guid: b5d28eeb9706fd54ab70688e134bb5ac,
@@ -15519,21 +15535,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ayanda_ChatBot
       objectReference: {fileID: 0}
-    - target: {fileID: 3639569612292899213, guid: 1aa59d3ac3373c442bdac9fcc1bc8948,
-        type: 3}
-      propertyPath: leftPos
-      value: -6.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 3639569612292899213, guid: 1aa59d3ac3373c442bdac9fcc1bc8948,
-        type: 3}
-      propertyPath: centerPos
-      value: -0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3639569612292899213, guid: 1aa59d3ac3373c442bdac9fcc1bc8948,
-        type: 3}
-      propertyPath: rightPos
-      value: 5.41
-      objectReference: {fileID: 0}
     - target: {fileID: 3639569612292899202, guid: 1aa59d3ac3373c442bdac9fcc1bc8948,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15588,6 +15589,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639569612292899213, guid: 1aa59d3ac3373c442bdac9fcc1bc8948,
+        type: 3}
+      propertyPath: leftPos
+      value: -6.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639569612292899213, guid: 1aa59d3ac3373c442bdac9fcc1bc8948,
+        type: 3}
+      propertyPath: centerPos
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639569612292899213, guid: 1aa59d3ac3373c442bdac9fcc1bc8948,
+        type: 3}
+      propertyPath: rightPos
+      value: 5.41
       objectReference: {fileID: 0}
     - target: {fileID: 3639569612292899203, guid: 1aa59d3ac3373c442bdac9fcc1bc8948,
         type: 3}
@@ -17744,7 +17760,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00024789214, y: -0.00008573042}
+  m_AnchoredPosition: {x: 0.00012167354, y: -0.0000824722}
   m_SizeDelta: {x: -10.827255, y: 0}
   m_Pivot: {x: 2.25, y: 1}
 --- !u!114 &1130653302
@@ -21488,6 +21504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeAmount: 0.1
   mainAudioSource: {fileID: 534669902}
+  maxVolume: 1
 --- !u!224 &1333599663 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224269080041570862, guid: c77b0ad7e7f71b0488425c4b7d692059,
@@ -38762,6 +38779,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 556506647, guid: 538df508b3dc89f43b6859c9d7dd54b6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 47a33d0eb37a62f47867229d17ebb201, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538df508b3dc89f43b6859c9d7dd54b6, type: 3}
 --- !u!1 &982415860255460199

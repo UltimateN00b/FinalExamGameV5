@@ -73,7 +73,7 @@ public class Character : MonoBehaviour
         GameObject characterInfoCanvas = GameObject.Find("CharacterInfoCanvas");
         GameObject statsCanvas = GameObject.Find("StatsCanvas");
 
-        Utilities.SearchChild("Name", characterInfoCanvas).GetComponent<Text>().text = myName;
+        //Utilities.SearchChild("Name", characterInfoCanvas).GetComponent<Text>().text = myName;
         Utilities.SearchChild("Image", characterInfoCanvas).GetComponent<Image>().sprite = characterImage;
 
         //*where dice total clear was

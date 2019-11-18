@@ -1389,6 +1389,7 @@ GameObject:
   - component: {fileID: 8723862008864352154}
   - component: {fileID: 8723862008864352153}
   - component: {fileID: 499828585}
+  - component: {fileID: 242954939}
   m_Layer: 0
   m_Name: InstructionsCanvas
   m_TagString: Untagged
@@ -1501,6 +1502,21 @@ MonoBehaviour:
   characterPortraitSprites:
   - {fileID: 21300000, guid: ce71c401a3a3f1d4e9a1dbefdae9cb30, type: 3}
   - {fileID: 21300002, guid: ce71c401a3a3f1d4e9a1dbefdae9cb30, type: 3}
+--- !u!114 &242954939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8723862008864351335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36679e79f4eff82408c4e7dc9f951e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeAmount: 0.01
+  useTimer: 1
+  timeBeforeFadeIn: 0
 --- !u!1 &8723862010123888742
 GameObject:
   m_ObjectHideFlags: 0

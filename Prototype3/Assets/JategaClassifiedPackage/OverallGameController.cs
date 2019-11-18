@@ -20,9 +20,13 @@ public class OverallGameController : MonoBehaviour {
             if (!_instructionsCanvas.activeInHierarchy)
             {
                 _instructionsCanvas.SetActive(true);
+                GameObject.Find("CharacterInfoUpdatedCanvas").GetComponent<AudioFader>().FadeIn();
+                Camera.main.GetComponents<AudioFader>()[1].FadeOut();
             } else
             {
                 _instructionsCanvas.SetActive(false);
+                GameObject.Find("CharacterInfoUpdatedCanvas").GetComponent<AudioFader>().FadeOut();
+                Camera.main.GetComponents<AudioFader>()[1].FadeIn();
             }
         }
 

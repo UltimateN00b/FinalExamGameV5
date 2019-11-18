@@ -57,7 +57,10 @@ public class HealthBar : MonoBehaviour
                         GameObject.Find("Ayanda").GetComponent<Animator>().SetBool("winning", true);
                         if (!TutorialManager.IsTutorial())
                         {
-                        GameObject.Find("AyandaMonster").GetComponent<Animator>().SetBool("dying", true);
+                            if (GameObject.Find("AyandaMonster") != null)
+                            {
+                                GameObject.Find("AyandaMonster").GetComponent<Animator>().SetBool("dying", true);
+                            }
                         }
                     } else
                     {

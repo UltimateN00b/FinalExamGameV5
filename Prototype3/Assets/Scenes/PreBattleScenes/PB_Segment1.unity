@@ -255,7 +255,7 @@ PrefabInstance:
     - target: {fileID: 256434002, guid: c1f956aafd6005748b6a40cd07a13c9d, type: 3}
       propertyPath: characterImage
       value: 
-      objectReference: {fileID: 21300000, guid: 20a8adbc6da31374291bb02a3b55b12b,
+      objectReference: {fileID: 21300000, guid: 589f24d3112659d498371cd9c34f54ec,
         type: 3}
     - target: {fileID: 256434002, guid: c1f956aafd6005748b6a40cd07a13c9d, type: 3}
       propertyPath: hp
@@ -268,7 +268,7 @@ PrefabInstance:
     - target: {fileID: 19846761, guid: c1f956aafd6005748b6a40cd07a13c9d, type: 3}
       propertyPath: characterImage
       value: 
-      objectReference: {fileID: 21300000, guid: 0fab4d44f49d1b442b6725cacb095aef,
+      objectReference: {fileID: 21300000, guid: 589f24d3112659d498371cd9c34f54ec,
         type: 3}
     - target: {fileID: 19846759, guid: c1f956aafd6005748b6a40cd07a13c9d, type: 3}
       propertyPath: timeBetweenDiceRolls
@@ -281,7 +281,7 @@ PrefabInstance:
     - target: {fileID: 1130384206, guid: c1f956aafd6005748b6a40cd07a13c9d, type: 3}
       propertyPath: characterImage
       value: 
-      objectReference: {fileID: 21300000, guid: 20a8adbc6da31374291bb02a3b55b12b,
+      objectReference: {fileID: 21300000, guid: 589f24d3112659d498371cd9c34f54ec,
         type: 3}
     - target: {fileID: 1130384206, guid: c1f956aafd6005748b6a40cd07a13c9d, type: 3}
       propertyPath: hp
@@ -7298,8 +7298,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 205647739}
   m_HandleRect: {fileID: 205647738}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -15330,7 +15330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00037874037, y: -0.00003079999}
+  m_AnchoredPosition: {x: 0.00014764523, y: -0.00006846575}
   m_SizeDelta: {x: -10.827255, y: 0}
   m_Pivot: {x: 2.25, y: 1}
 --- !u!114 &1130653302
