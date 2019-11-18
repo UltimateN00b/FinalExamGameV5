@@ -11347,7 +11347,30 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_OnShown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2104556108}
+        m_MethodName: set_clip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: b26d8eb3d264b8e4f867f2d705b11b71,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2104556108}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   goToConsecutiveNodeOnClick: 1
@@ -19588,7 +19611,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 205647739}
   m_HandleRect: {fileID: 205647738}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -44974,7 +44997,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00015922202, y: -0.00007022638}
+  m_AnchoredPosition: {x: 0.00017501338, y: -0.00010409889}
   m_SizeDelta: {x: -10.827255, y: 0}
   m_Pivot: {x: 2.25, y: 1}
 --- !u!114 &1130653302
@@ -82329,6 +82352,12 @@ PrefabInstance:
 --- !u!4 &2104556107 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4056921733445890, guid: d1625a59efbe19c43a26a9af4d92f764,
+    type: 3}
+  m_PrefabInstance: {fileID: 2104556106}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2104556108 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82134996786670164, guid: d1625a59efbe19c43a26a9af4d92f764,
     type: 3}
   m_PrefabInstance: {fileID: 2104556106}
   m_PrefabAsset: {fileID: 0}

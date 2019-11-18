@@ -129,6 +129,8 @@ public class Chatbot : MonoBehaviour {
                 }
             }
 
+            PlayCharacterSound(expression);
+
             if (this.GetComponent<SpriteRenderer>() != null)
             {
                 this.GetComponent<SpriteRenderer>().sprite = changeSprite;
@@ -213,5 +215,56 @@ public class Chatbot : MonoBehaviour {
     public List<ChatPosSetter> myListChatPosSetters()
     {
         return _myChatPosSetters;
+    }
+
+    public void PlayCharacterSound(string sound)
+    {
+
+        if (this.gameObject.name.Contains("Lana"))
+        {
+            if (sound.ToUpper().Contains("SAD"))
+            {
+                GameObject.Find("CharacterAudioSourcePlayer").GetComponent<CharacterAudioPlayer>().PlayLanaSound(Resources.Load("Lana_Sad") as AudioClip);
+            }
+
+            if (sound.ToUpper().Contains("SURPRISED"))
+            {
+                GameObject.Find("CharacterAudioSourcePlayer").GetComponent<CharacterAudioPlayer>().PlayLanaSound(Resources.Load("Lana_Hmm") as AudioClip);
+            }
+
+            if (sound.ToUpper().Contains("BLUSH"))
+            {
+                GameObject.Find("CharacterAudioSourcePlayer").GetComponent<CharacterAudioPlayer>().PlayJoeySound(Resources.Load("Lana_Laugh") as AudioClip);
+            }
+        }
+
+        if (this.gameObject.name.Contains("Joey"))
+        {
+            if (sound.ToUpper().Contains("SAD"))
+            {
+                GameObject.Find("CharacterAudioSourcePlayer").GetComponent<CharacterAudioPlayer>().PlayJoeySound(Resources.Load("Joey_Sad") as AudioClip);
+            }
+
+            if (sound.ToUpper().Contains("BLUSH"))
+            {
+                GameObject.Find("CharacterAudioSourcePlayer").GetComponent<CharacterAudioPlayer>().PlayJoeySound(Resources.Load("Joey_Oop") as AudioClip);
+            }
+        }
+
+        if (this.gameObject.name.Contains("Engel"))
+        {
+            if (sound.ToUpper().Contains("ANGRY"))
+            {
+                GameObject.Find("CharacterAudioSourcePlayer").GetComponent<CharacterAudioPlayer>().PlayEngelsSound(Resources.Load("Engel_Angry") as AudioClip);
+            }
+        }
+
+        if (this.gameObject.name.Contains("Ntando"))
+        {
+            if (sound.ToUpper().Contains("EMBAR"))
+            {
+                GameObject.Find("CharacterAudioSourcePlayer").GetComponent<CharacterAudioPlayer>().PlayNtandoSound(Resources.Load("Ntando_Hmph") as AudioClip);
+            }
+        }
     }
 }

@@ -236,6 +236,12 @@ public class Character : MonoBehaviour
 
         poison.GetComponent<Poison>().DealPoisonDamage();
 
+        if (!_paralysed)
+        {
+            GameObject diceCanvas = GameObject.Find("DiceCanvas");
+            diceCanvas.transform.GetChild(2).GetComponent<Dice>().UnparalyseDice();
+        }
+
         if (_paralysed)
         {
             GameObject diceCanvas = GameObject.Find("DiceCanvas");
